@@ -3,6 +3,10 @@ form{
     flex-basis: 300px;
 }
 
+.height{
+    margin-bottom: 30px;
+}
+
 .info{
     flex: 1;
     flex-basis: 200px;

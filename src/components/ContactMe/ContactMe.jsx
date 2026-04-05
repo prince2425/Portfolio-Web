@@ -2,9 +2,8 @@
 import React from "react";
 import {
   FaFacebookF,
-  FaPinterestP,
   FaInstagram,
-  FaLinkedinIn,
+  FaLinkedinIn, FaWhatsapp, FaGithub
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "./ContactMe.css";
@@ -13,9 +12,9 @@ const ContactMe = () => {
   return (
     <section >
       <div id="contactme"  className="wrapper p-block-9">
-        <div className="text-center">
+        <div className="text-center height">
           <span
-            className="text-6xl font-medium bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent  middle"
+            className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent  middle"
             datatype="Contact Me"
           >
             Contact Me
@@ -27,7 +26,7 @@ const ContactMe = () => {
 
         <div className="flex gap-5 mt-8">
           <form action="">
-            <div className="flex gap-2">
+            <div className="block md:flex gap-2">
               <div className="input-container ">
                 <label htmlFor="" >Your Name</label>
                 <input
@@ -53,7 +52,7 @@ const ContactMe = () => {
                 />
               </div>
             </div>
-            <div className="flex gap-2 mt-1">
+            <div className="block md:flex gap-2 mt-1">
               <div className="input-container">
                 <label htmlFor="phone">Phone</label>
                 <input
@@ -83,7 +82,7 @@ const ContactMe = () => {
                 </select>
               </div>
             </div>
-            <div className="flex gap-2 mt-1">
+            <div className="block md:flex gap-2 mt-1">
               <div className="input-container">
                 <label htmlFor="range">Budget Range(USD)*</label>
                 <select
@@ -128,9 +127,9 @@ const ContactMe = () => {
                 rows={9}
               ></textarea>
             </div>
-            <div className="mt-1">
+            <div className="pt-3">
               <a href="#" className="btn">
-                Send Message
+                Submit
               </a>
             </div>
           </form>
@@ -140,16 +139,16 @@ const ContactMe = () => {
               <div>
                 <h6>Address</h6>
                 <p>
-                  2332 Royal Ln .Mesa, <br />
-                  new jernay 32451
+                  Noida Uttar Pradesh , <br />
+                  new jernay
                 </p>
               </div>
               <div>
                 <h6>Contact</h6>
                 <p>
-                  Phone:0123-456-789
+                  Phone:8303-508-816
                   <br />
-                  Email: example@gmail.com
+                  Email: shiprincesingh@gmail.com
                 </p>
               </div>
               <div>
@@ -165,21 +164,24 @@ const ContactMe = () => {
               <h5>Stay Connected</h5>
 
               <div className="flex gap-1 mt-2">
-                <a href="#" className="icon-container black-inverse">
+                <a href="https://www.facebook.com/prince.singh.760369/?_rdr" target="_blank" className="icon-container black-inverse">
                   <FaFacebookF />
                 </a>
-                <a href="#" className="icon-container black-inverse">
+                <a href="https://x.com/Prince_singh731" target="_blank" className="icon-container black-inverse">
                   <FaXTwitter />
                 </a>
-                <a href="#" className="icon-container black-inverse">
-                  <FaPinterestP />
-                </a>
-                <a href="#" className="icon-container black-inverse">
-                  <FaInstagram />
-                </a>
-                <a href="#" className="icon-container black-inverse">
-                  <FaLinkedinIn />
-                </a>
+                          <a href="https://github.com/prince2425" target="_blank" className="icon-container black-inverse">
+                            <FaGithub />
+                          </a>
+                          <a href="https://www.instagram.com/prince_singh_731_/" target="_blank"  className="icon-container black-inverse">
+                            <FaInstagram />
+                          </a>
+                          <a href="https://www.linkedin.com/in/prince-singh-7008062a6/" target="_blank"  className="icon-container black-inverse">
+                            <FaLinkedinIn />
+                          </a>
+                          <a href="https://wa.me/8303508816" target="_blank"  className="icon-container black-inverse">
+                            <FaWhatsapp />
+                          </a>
               </div>
             </div>
           </div>

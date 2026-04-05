@@ -22,11 +22,14 @@ const Navbar = () => {
     setIsMenuActive(!isMenuActive);
   };
 
+  const closeMenu = () => {
+  setIsMenuActive(false);
+};
 
   return (
     <header className="header">
       <nav className="flex between wrapper navbar">
-        <a href="#" className="logo p-[8px] rounded-[30px] text-xl">
+        <a href="#" className="logo p-2 rounded-[30px] text-xl">
           {/* <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"> */}
           <span className="gradient-text font-bold">Prince Singh</span>
         </a>
@@ -63,7 +66,7 @@ const Navbar = () => {
           </a>
 
           {/* <a href="#" className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-3 py-2 font-bold rounded-full"> */}
-          <a href="#" className="btn">
+          <a href="#" className="btn btn2">
             Let's Talk
           </a>
 
@@ -78,25 +81,26 @@ const Navbar = () => {
           className={`mobile-menu ${isMenuActive ? "mobile-menu-active" : ""}`}
         >
           <li>
-            <a href="#">Home</a>
+            <AnchorLink href="#home" onClick={closeMenu}>Home</AnchorLink>
           </li>
           <li>
-            <a href="#">Services</a>
+            <AnchorLink href="#service" onClick={closeMenu}>Services</AnchorLink>
           </li>
           <li>
-            <a href="#">About Me</a>
+             <AnchorLink href="#about" onClick={closeMenu}>About Me</AnchorLink>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <AnchorLink href="#project" onClick={closeMenu}> Projects </AnchorLink>
           </li>
           <li>
-            <a href="#">Testimonials</a>
+            <AnchorLink href="#testimonial" onClick={closeMenu}>Testimonials</AnchorLink>
           </li>
           <li>
-            <a href="#">Contact Me</a>
+            <AnchorLink href="#contactme" onClick={closeMenu}>Contact Me</AnchorLink>
           </li>
+
           <li>
-            <a href="#" className="btn">
+            <a href="#" className="btn" onClick={closeMenu}>
               Let's Talk
             </a>
           </li>

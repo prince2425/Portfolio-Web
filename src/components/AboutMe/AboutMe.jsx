@@ -45,30 +45,31 @@ const AboutMe = () => {
             challenges.
           </p>
 
-          <div className="flex gap-2 my-12 px-1">
+          <div className="flex lg:flex gap-2 my-12 px-1">
+         
             <div className="pr-3">
-              <h6 className="text-4xl font-medium text-[var(--accent-clr)] text-center">
+              <h6 className="text-3xl lg:text-4xl font-medium text-[var(--accent-clr)] text-center">
                 10+
               </h6>
-              <p>Projects Completed</p>
+              <p>Projects <br className="block sm:hidden" /> Completed</p>
             </div>
 
             <div className="px-3">
-              <h6 className="text-4xl font-medium text-[var(--accent-clr)] text-center">
+              <h6 className="text-3xl lg:text-4xl font-medium text-[var(--accent-clr)] text-center">
                 5+
               </h6>
-              <p>Industry Covered</p>
+              <p>Industry <br className="block sm:hidden" /> Covered</p>
             </div>
 
             <div className="px-3">
-              <h6 className="text-4xl font-medium  text-[var(--accent-clr)] text-center">
+              <h6 className="text-3xl lg:text-4xl font-medium  text-[var(--accent-clr)] text-center">
                 0.2+
               </h6>
-              <p>Years of Experience</p>
+              <p>Years of <br className="block sm:hidden" /> Experience</p>
             </div>
           </div>
 
-          <a href={CV} download="MyCV" className="btn">
+          <a href={CV} download="MyCV" className="btn mt-2 ">
             Download CV
           </a>
         </div>
