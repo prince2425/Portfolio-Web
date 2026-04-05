@@ -60,6 +60,12 @@ label{
     color: gray;
 }
 
-textarea{
+
+/* textarea{
     resize: none;
+} */
+
+
+textarea{
+    resize: vertical;
 }
