@@ -7,7 +7,7 @@ const AboutMe = () => {
   return (
     <section>
       <div id="about" className="flex gap-20 wrapper p-block-9 border-btn">
-        <div className="flex-1 basis-[300px] ">
+        <div className="flex-1 basis-75">
           <img
             src={AboutImage}
             alt="Abou"
@@ -15,13 +15,16 @@ const AboutMe = () => {
           />
         </div>
 
-        <div className="flex-1 basis-[300px]">
-          <span className=" text-6xl font-medium bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent" datatype="About Me">
+        <div className="flex-1 basis-75">
+          <span
+            className=" text-6xl font-medium bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent "
+            datatype="About Me"
+          >
             About Me
           </span>
- {/* sub-text overlay-text */}
-          <h2>
-            Who is <span className="green-text">Prince Singh</span>
+          {/* sub-text overlay-text */}
+          <h2 className="">
+            Who is <span className="green-text m-5">Prince Singh</span>
           </h2>
 
           <p className="para text-3xl ">
