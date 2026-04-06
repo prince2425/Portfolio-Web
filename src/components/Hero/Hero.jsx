@@ -28,7 +28,7 @@ const Hero = () => {
             responsive, and user-friendly web interfaces.
           </p>
 
-          <div className="flex gap-1 m-4 pb-4">
+          <div className="flex gap-[7px] md:gap-1 m-4 w-full pb-4">
             <a
               href="https://www.facebook.com/prince.singh.760369/?_rdr"
               target="_blank"

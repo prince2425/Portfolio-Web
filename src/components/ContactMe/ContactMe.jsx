@@ -163,7 +163,7 @@ const ContactMe = () => {
             <div className="bg-header rounded-b">
               <h5>Stay Connected</h5>
 
-              <div className="flex gap-1 mt-2">
+              <div className="flex gap-1.75 md:gap-1 mt-2">
                 <a href="https://www.facebook.com/prince.singh.760369/?_rdr" target="_blank" className="icon-container black-inverse">
                   <FaFacebookF />
                 </a>

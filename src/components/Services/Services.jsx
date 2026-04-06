@@ -56,23 +56,26 @@ const Services = () => {
   return (
     <section>
       <div id="service" className="wrapper p-block-9 border-btn">
-        <div className="flex between gap-4     flex-col items-center justify-center text-center">
+         <div className="flex between gap-4 flex-col items-center justify-center text-center">
           <div className="flex flex-col items-center justify-center text-center">
-            <span className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent" datatype="Services">
+            <span className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overflow-hidden" datatype="Services">
               My Specialization
             </span>
+
 
             <h2 className="font-medium">
               <span className="green-text ">Services</span> I Provide
             </h2>
           </div>
 
-          <a href="#" className="btn self-end">
+          <a href="#" className="btn">
             View All Services
           </a>
-        </div>
+        </div> 
 
-        <div className="flex gap-2 mt-2">{renderServicesData}</div>
+  
+
+        <div className="flex flex-col md:flex-row gap-3 mt-2">{renderServicesData}</div>
       </div>
     </section>
   );

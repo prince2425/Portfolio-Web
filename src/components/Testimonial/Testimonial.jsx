@@ -56,7 +56,7 @@ const Testimonial = () => {
 
         <div className="text-center">
           <span
-            className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent middle"
+            className="text-6xl pr-3 font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent middle"
             datatype="Client Testimonial"
           >
             Client Testimonial
