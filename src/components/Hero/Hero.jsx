@@ -10,6 +10,8 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import "@fontsource/roboto";
+
 
 const Hero = () => {
   return (
@@ -19,7 +21,7 @@ const Hero = () => {
           <span className="sub-text ">Hi, I'm</span>
 
           <h1>
-            <span className="green-text font-medium">Prince Singh</span>
+            <span className="green-text font-medium playwrite" >Prince Singh</span>
             <br /> <span className="">Software Developer </span>
           </h1>
 
@@ -28,7 +30,7 @@ const Hero = () => {
             responsive, and user-friendly web interfaces.
           </p>
 
-          <div className="flex gap-[7px] md:gap-1 m-4 w-full pb-4">
+          <div className="flex gap-1.75 md:gap-1 m-4 w-full pb-4">
             <a
               href="https://www.facebook.com/prince.singh.760369/?_rdr"
               target="_blank"
