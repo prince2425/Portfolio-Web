@@ -37,14 +37,34 @@
 }
 
 .slick-slide{
-    padding-inline:40px;
-}
+  
+  padding-inline: 20px;
+  box-sizing: border-box;
+} 
 
 .slick-list{
-    padding-inline:0;
+    padding-inline:10;
+}
+
+.card {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 
+
+
+
+@media screen and (max-width: 600px) {
+  .slick-slide {
+    padding-inline: 10px;  /* 👈 aur kam */
+  }
+
+  .card {
+    width: 100%;           /* 👈 full width */
+  }
+}
 
 
 

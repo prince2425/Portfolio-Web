@@ -26,8 +26,9 @@
 
 .sub-text{
     color: var(--text-primary-clr);
-    font-size: 1.2rem;
+    font-size: 1.9rem;
     text-transform: capitalize;
+    font-size: bold;
 }
 
 h1{

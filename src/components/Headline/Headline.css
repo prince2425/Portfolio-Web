@@ -63,12 +63,14 @@
 .moving-text {
   display: flex;
   white-space: nowrap;
+   width: max-content;
 }
 
 .container {
   display: flex;
   align-items: center;
   animation: slide-left 12s linear infinite;
+  
 }
 
 .container h5 {
@@ -81,6 +83,22 @@
   font-size: 1.5rem;
   margin-right: 3rem;
 }
+
+
+@media screen and (max-width: 600px) {
+  .container h5 {
+    font-size: 1.7rem;
+    margin-right: 1.5rem;
+  }
+
+  .star {
+    font-size: 1rem;
+    margin-right: 1.5rem;
+  }
+}
+
+
+/* Important (smooth infinite scroll fix) */
 
 @keyframes slide-left {
   from {
