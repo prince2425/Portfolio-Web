@@ -67,7 +67,7 @@ const Hero = () => {
               <FaLinkedinIn />
             </a>
             <a
-              href="https://wa.me/8303508816"
+              href="https://wa.me/918303508816"
               target="_blank"
               className="icon-container black-inverse"
             >

@@ -8,7 +8,8 @@ import AboutMe from './components/AboutMe/AboutMe'
 import Projects from './components/Projects/Projects'
 import Testimonial from './components/Testimonial/Testimonial'
 import ContactMe from './components/ContactMe/ContactMe'
-
+import Footer from './components/Footer/Footer'
+import Education from './components/Education/Education'
 const App = () => {
   return (
     <div>
@@ -16,11 +17,13 @@ const App = () => {
        <Hero/> 
       <Headline/>
        <AboutMe/>
+       {/* <Education /> */}
        <Services/>
       <Projects/>
       <Headline />
       <Testimonial />
       <ContactMe />
+      {/* <Footer /> */}
     </div>
   )
 }

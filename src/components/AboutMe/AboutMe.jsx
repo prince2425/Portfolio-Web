@@ -6,7 +6,7 @@ import CV from "../../assets/Resume.docx";
 const AboutMe = () => {
   return (
     <section>
-      <div id="about" className="flex gap-20 wrapper p-block-9 border-btn">
+      <div id="about" className="flex gap-20 wrapper p-block-9 border-btn ">
         <div className="flex-1 basis-75">
           <img
             src={AboutImage}

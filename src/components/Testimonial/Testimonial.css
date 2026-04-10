@@ -1,4 +1,4 @@
-
+/* 
 .profile{
     width:5rem;
     aspect-ratio:1;
@@ -55,20 +55,40 @@
 
 
 
-
+/* 
 @media screen and (max-width: 600px) {
   .slick-slide {
-    padding-inline: 10px;  /* 👈 aur kam */
+    padding-inline: 10px;
   }
 
   .card {
-    width: 100%;           /* 👈 full width */
+    width: 100%;         
   }
-}
+} 
+ */
 
 
 
-/* .profile{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .profile{
     width: 5rem;
     aspect-ratio: 1;
     border-radius: 100vw;
@@ -85,6 +105,7 @@
     font-size: 1.2rem;
     color: var(--accent-clr);
     margin-right: .3rem;
+    display: flex;
 }
 
 .slick-next::before,
@@ -111,7 +132,7 @@
 
 .slick-list{
     padding-inline: -30px;
-} */
+} 
 
 
 

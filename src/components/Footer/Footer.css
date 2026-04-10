@@ -42,7 +42,7 @@
 }
 
 .footer-input{
-    height: 7vh;
+    /* height: 7vh; */
 
 }
 
@@ -50,7 +50,7 @@
     flex: 1;
     border-radius: 1rem 0 0 1rem;
     background: var(--surface-clr);
-    border: .1rem solid fgba(123,123,123,0.2);
+    border: .1rem solid rgba(123,123,123,0.2);
     padding: 1rem;
 }
 
@@ -62,7 +62,7 @@
     width: 3rem;
     background: var(--accent-clr);
     font-size: 1.2rem;
-    color: var(--fix-clr);
+    color: var(--background-clr);
     border: none;
     border-radius: 0 1rem 1rem 0;
 }

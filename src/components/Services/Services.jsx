@@ -17,7 +17,7 @@ const ServicesData = [
     id: 1,
     title: "Website Development",
     description:
-      "Creating fast, responsive, and user-friendly websites.Fully  responsive  websites using HTML, CSS, JavaScript,  and  frameworks  like React.js  Next JS  to  deliver engaging user experiences across all devices.",
+      "Creating fast, responsive, and user-friendly websites.Fully  responsive using HTML, CSS, JavaScript,  and  frameworks  like React.js  Next JS  to  deliver user experiences across all devices.",
     icon: <FaGlobe className="green-text" />,
   },
   {
@@ -68,9 +68,9 @@ const Services = () => {
             </h2>
           </div>
 
-          <a href="#" className="btn">
+          {/* <a href="#" className="btn">
             View All Services
-          </a>
+          </a> */}
         </div> 
 
   

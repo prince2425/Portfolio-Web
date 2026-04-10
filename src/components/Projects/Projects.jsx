@@ -2,8 +2,8 @@
 
 
 import React from "react";
-import Project1 from "../../assets/project1.jpg";
-import Project2 from "../../assets/project2.jpg";
+import Project1 from "../../assets/project1.png";
+import Project2 from "../../assets/project2.png";
 import Project3 from "../../assets/project3.jpg";
 import "./Projects.css";
 import { FaArrowRight } from "react-icons/fa";

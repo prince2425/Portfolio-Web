@@ -14,7 +14,7 @@ const ContactMe = () => {
       <div id="contactme"  className="wrapper p-block-9">
         <div className="text-center height">
           <span
-            className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent  middle"
+            className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text  middle"
             datatype="Contact Me"
           >
             Contact Me
@@ -54,7 +54,7 @@ const ContactMe = () => {
             </div>
             <div className="block md:flex gap-2 mt-1">
               <div className="input-container">
-                <label htmlFor="phone">Phone</label>
+                <label htmlFor="phone"> Phone</label>
                 <input
                   type="tel"
                   name="phone"
@@ -134,25 +134,25 @@ const ContactMe = () => {
             </div>
           </form>
 
-          <div className=" info">
+          <div className=" info cart">
             <div className="detail gap-4">
               <div>
-                <h6>Address</h6>
+                <h6 className="green-text">Address</h6>
                 <p>
                   Noida Uttar Pradesh , <br />
                   new jernay
                 </p>
               </div>
               <div>
-                <h6>Contact</h6>
+                <h6 className="green-text">Contact</h6>
                 <p>
-                  Phone:8303-508-816
+                  Phone: <a href="tel:8303508816" className="text-blue-500">8303-508-816</a>
                   <br />
-                  Email: shiprincesingh@gmail.com
+                  Email: <a href="mailto:shiprince@gmail.com">shiprincesingh@gmail.com</a> 
                 </p>
               </div>
               <div>
-                <h6>Time</h6>
+                <h6 className="green-text">Time</h6>
                 <p>
                   Monday- Friday : 10:00 - 08:00 <br />
                   Saturday-Sunday: 10:00 - 06:00
@@ -160,10 +160,10 @@ const ContactMe = () => {
               </div>
             </div>
 
-            <div className="bg-header rounded-b">
-              <h5>Stay Connected</h5>
+            <div className="bg-header rounded-b ">
+              <h5 className="green-text pt-3">Stay Connected</h5>
 
-              <div className="flex gap-1.75 md:gap-1 mt-2">
+              <div className="flex gap-1.75 md:gap-1 pt-1.5">
                 <a href="https://www.facebook.com/prince.singh.760369/?_rdr" target="_blank" className="icon-container black-inverse">
                   <FaFacebookF />
                 </a>
@@ -179,7 +179,7 @@ const ContactMe = () => {
                           <a href="https://www.linkedin.com/in/prince-singh-7008062a6/" target="_blank"  className="icon-container black-inverse">
                             <FaLinkedinIn />
                           </a>
-                          <a href="https://wa.me/8303508816" target="_blank"  className="icon-container black-inverse">
+                          <a href="https://wa.me/918303508816" target="_blank"  className="icon-container black-inverse">
                             <FaWhatsapp />
                           </a>
               </div>
