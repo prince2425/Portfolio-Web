@@ -93,6 +93,8 @@ const Testimonial = () => {
           slidesToShow: 1,
         },
       },
+      
+ 
     ],
   };
 

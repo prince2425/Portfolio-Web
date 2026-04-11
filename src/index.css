@@ -65,6 +65,13 @@ li {
   padding-inline: 2rem;
 }
 
+/* .wrapper {
+  width: 100%;
+  overflow: hidden;
+} */
+
+
+
 img {
   max-width: 100%;
   height: auto;
