@@ -101,11 +101,9 @@ const Testimonial = () => {
       <div className="wrapper p-block-9 border-btn">
         <div className="text-center">
           <span
-            className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text  middle"
+            className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent     "
             datatype="client Testimonial"
-          >
-            {/* sub-text */}
-            Client Testimonial
+          >            Client Testimonial
           </span>
           <h2>
             Testimonial that <br />{" "}
