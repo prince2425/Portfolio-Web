@@ -1,17 +1,70 @@
-
-import React from "react";
+// import React from "react";
 import {
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn, FaWhatsapp, FaGithub
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaGithub,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "./ContactMe.css";
 
+import React, { useState } from "react";
+
 const ContactMe = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    interest: "",
+    range: "",
+    country: "",
+    message: "",
+  });
+
+  const sendData = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:5000/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          interest: "",
+          range: "",
+          country: "",
+          message: "",
+        });
+      } else {
+        alert("Failed to send message");
+      }
+    } catch (error) {
+      alert("Server error!");
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   return (
-    <section >
-      <div id="contactme"  className="wrapper p-block-9">
+    <section>
+      <div id="contactme" className="wrapper p-block-9">
         <div className="text-center height">
           <span
             className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text  middle"
@@ -25,30 +78,34 @@ const ContactMe = () => {
         </div>
 
         <div className="flex gap-5 mt-8">
-          <form action="">
+          <form onSubmit={sendData}>
             <div className="block md:flex gap-2">
               <div className="input-container ">
-                <label htmlFor="" >Your Name</label>
+                <label htmlFor="">Your Name</label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   required
-                  autoComplete="off "
-                  placeholder="Titu singh"
+                  autoComplete="off"
+                  placeholder="Enter Your name"
                   className="input-field"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div className="input-container">
                 <label htmlFor="">Email:</label>
                 <input
-                  type="text"
+                  type="email"
                   name="email"
                   id="email"
                   required
-                  autoComplete="off "
-                  placeholder="titu@gmail.comh"
+                  autoComplete="off"
+                  placeholder="Enter your Email"
                   className="input-field"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -60,9 +117,11 @@ const ContactMe = () => {
                   name="phone"
                   id="phone"
                   required
-                  autoComplete="off "
+                  autoComplete="off"
                   placeholder="Enter Phone Number"
                   className="input-field"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
               <div className="input-container">
@@ -70,15 +129,16 @@ const ContactMe = () => {
                 <select
                   name="interest"
                   id="interest"
-                  defaultValue="Select"
                   className="input-field select"
+                  value={formData.interest}
+                  onChange={handleChange}
+                    required
+
                 >
-                  <option disable value="Select">
-                    Select
-                  </option>
-                  <option value="Canada">Website Design</option>
-                  <option value="UAE">UI/UX Design</option>
-                  <option value="Spain">App Design</option>
+                  <option disabled value="">Select</option>
+                  <option value="Website Design">Website Design</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="App Design">App Design</option>
                 </select>
               </div>
             </div>
@@ -88,15 +148,16 @@ const ContactMe = () => {
                 <select
                   name="range"
                   id="range"
-                  defaultValue="Select"
                   className="input-field select"
+                  value={formData.range}
+                  onChange={handleChange}
+                    required
+
                 >
-                  <option disable value="Select">
-                    Select
-                  </option>
-                  <option value="Canada">$100-$500</option>
-                  <option value="UAE">$500-$1000</option>
-                  <option value="Spain">$10000+</option>
+                  <option disabled value="">Select</option>
+                  <option value="$100-$500">$100-$500</option>
+                  <option value="$500-$1000">$500-$1000</option>
+                  <option value="$1000+">$1000+</option>
                 </select>
               </div>
               <div className="input-container">
@@ -104,14 +165,18 @@ const ContactMe = () => {
                 <select
                   name="country"
                   id="country"
-                  defaultValue="Select"
                   className="input-field select"
+                  value={formData.country}
+                  onChange={handleChange}
+                    required
+
                 >
-                  <option disable value="Select">
+                  <option disabled value="">
                     Select
                   </option>
-                  <option value="Canada">Canada</option>
+                  <option value="India">India</option>
                   <option value="UAE">UAE</option>
+                  <option value="Canada">Canada</option>
                   <option value="Spain">Spain</option>
                 </select>
               </div>
@@ -125,12 +190,14 @@ const ContactMe = () => {
                 required
                 className="input-field"
                 rows={9}
+                value={formData.message}
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className="pt-3">
-              <a href="#" className="btn">
+              <button type="submit" className="btn">
                 Submit
-              </a>
+              </button>
             </div>
           </form>
 
@@ -146,9 +213,15 @@ const ContactMe = () => {
               <div>
                 <h6 className="green-text">Contact</h6>
                 <p>
-                  Phone: <a href="tel:8303508816" className="text-blue-500">8303-508-816</a>
+                  Phone:{" "}
+                  <a href="tel:8303508816" className="text-blue-500">
+                    8303508816
+                  </a>
                   <br />
-                  Email: <a href="mailto:shiprince@gmail.com">shiprincesingh@gmail.com</a> 
+                  Email:{" "}
+                  <a href="mailto:shiprince@gmail.com">
+                    shiprincesingh@gmail.com
+                  </a>
                 </p>
               </div>
               <div>
@@ -164,24 +237,48 @@ const ContactMe = () => {
               <h5 className="green-text pt-3">Stay Connected</h5>
 
               <div className="flex gap-1.75 md:gap-1 pt-1.5">
-                <a href="https://www.facebook.com/prince.singh.760369/?_rdr" target="_blank" className="icon-container black-inverse">
+                <a
+                  href="https://www.facebook.com/prince.singh.760369/?_rdr"
+                  target="_blank"
+                  className="icon-container black-inverse"
+                >
                   <FaFacebookF />
                 </a>
-                <a href="https://x.com/Prince_singh731" target="_blank" className="icon-container black-inverse">
+                <a
+                  href="https://x.com/Prince_singh731"
+                  target="_blank"
+                  className="icon-container black-inverse"
+                >
                   <FaXTwitter />
                 </a>
-                          <a href="https://github.com/prince2425" target="_blank" className="icon-container black-inverse">
-                            <FaGithub />
-                          </a>
-                          <a href="https://www.instagram.com/prince_singh_731_/" target="_blank"  className="icon-container black-inverse">
-                            <FaInstagram />
-                          </a>
-                          <a href="https://www.linkedin.com/in/prince-singh-7008062a6/" target="_blank"  className="icon-container black-inverse">
-                            <FaLinkedinIn />
-                          </a>
-                          <a href="https://wa.me/918303508816" target="_blank"  className="icon-container black-inverse">
-                            <FaWhatsapp />
-                          </a>
+                <a
+                  href="https://github.com/prince2425"
+                  target="_blank"
+                  className="icon-container black-inverse"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href="https://www.instagram.com/prince_singh_731_/"
+                  target="_blank"
+                  className="icon-container black-inverse"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/prince-singh-7008062a6/"
+                  target="_blank"
+                  className="icon-container black-inverse"
+                >
+                  <FaLinkedinIn />
+                </a>
+                <a
+                  href="https://wa.me/918303508816"
+                  target="_blank"
+                  className="icon-container black-inverse"
+                >
+                  <FaWhatsapp />
+                </a>
               </div>
             </div>
           </div>

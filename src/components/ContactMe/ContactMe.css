@@ -53,6 +53,8 @@ label{
     padding: 1rem;
     border-radius: 1rem;
     margin-top: .5rem;
+     color: white;  
+    
 }
 
 .input-field:focus{
@@ -64,6 +66,19 @@ label{
     color: gray;
 }
 
+
+.select{
+    /* color: white; */
+    background: var(--surface-clr);
+}
+
+select option{
+    color: white;
+}
+
+/* .select{
+    color: white;
+} */
 
 /* textarea{
     resize: none;
