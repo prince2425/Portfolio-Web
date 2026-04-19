@@ -66,11 +66,11 @@ const Testimonial = () => {
           <div>
             <h4>{review.name}</h4>
             <p>{review.title}</p>
-            <span className="flex">
+            {/* <span className="flex">
               {Array.from({ length: review.rating }, (_, i) => (
                 <FaStar key={i} className="rating-star" />
               ))}
-            </span>
+            </span> */}
           </div>
         </div>
         <div>
@@ -100,7 +100,7 @@ const Testimonial = () => {
 
   return (
     <section>
-      <div className="wrapper p-block-9 border-btn">
+      <div id="testimonial" className="wrapper p-block-9 border-btn">
         <div className="text-center">
           <span
             className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent     "

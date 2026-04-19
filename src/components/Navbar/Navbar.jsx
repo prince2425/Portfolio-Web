@@ -66,9 +66,9 @@ const Navbar = () => {
           </a>
 
           {/* <a href="#" className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-3 py-2 font-bold rounded-full"> */}
-          <a href="#" className="btn btn2">
-            Let's Talk
-          </a>
+         <AnchorLink href="#contactme" className="btn btn2">
+  Let's Talk
+</AnchorLink>
 
           <a href="#" className="hamburger" onClick={toggleMenu}>
             {isMenuActive ? <FaXmark /> : <FaBars />}
@@ -100,9 +100,9 @@ const Navbar = () => {
           </li>
 
           <li>
-            <a href="#" className="btn" onClick={closeMenu}>
-              Let's Talk
-            </a>
+            <AnchorLink href="#contactme" className="btn btn2">
+  Let's Talk
+</AnchorLink>
           </li>
         </ul>
       </nav>

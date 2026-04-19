@@ -9,6 +9,7 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import "./ContactMe.css";
 
+import emailjs from "emailjs-com";
 import React, { useState } from "react";
 
 const ContactMe = () => {
@@ -17,49 +18,37 @@ const ContactMe = () => {
     email: "",
     phone: "",
     interest: "",
-    range: "",
-    country: "",
+    // range: "",
+    // country: "",
     message: "",
   });
 
-  const sendData = async (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendData = (e) => {
     e.preventDefault();
 
-    try {
-      const res = await fetch("http://localhost:5000/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    emailjs
+      .send("service_m0ctnbf", "template_q3889jq", formData, "M_hrkxo6cUlSMbflx")
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
 
-      if (res.ok) {
-        alert("Message sent successfully!");
+           // ✅ FORM RESET
         setFormData({
           name: "",
           email: "",
           phone: "",
           interest: "",
-          range: "",
-          country: "",
           message: "",
         });
-      } else {
-        alert("Failed to send message");
-      }
-    } catch (error) {
-      alert("Server error!");
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+        },
+        () => {
+          alert("❌ Failed to send message");
+        },
+      );
   };
 
   return (
@@ -88,7 +77,7 @@ const ContactMe = () => {
                   id="name"
                   required
                   autoComplete="off"
-                  placeholder="Enter Your name"
+                  placeholder="enter Your name"
                   className="input-field"
                   value={formData.name}
                   onChange={handleChange}
@@ -102,7 +91,7 @@ const ContactMe = () => {
                   id="email"
                   required
                   autoComplete="off"
-                  placeholder="Enter your Email"
+                  placeholder="enter your Email"
                   className="input-field"
                   value={formData.email}
                   onChange={handleChange}
@@ -118,7 +107,7 @@ const ContactMe = () => {
                   id="phone"
                   required
                   autoComplete="off"
-                  placeholder="Enter Phone Number"
+                  placeholder="enter Phone Number"
                   className="input-field"
                   value={formData.phone}
                   onChange={handleChange}
@@ -130,27 +119,29 @@ const ContactMe = () => {
                   name="interest"
                   id="interest"
                   className="input-field select"
+                  required
                   value={formData.interest}
                   onChange={handleChange}
-                    required
-
                 >
-                  <option disabled value="">Select</option>
+                  <option disabled value="">
+                    Select
+                  </option>
                   <option value="Website Design">Website Design</option>
                   <option value="UI/UX Design">UI/UX Design</option>
                   <option value="App Design">App Design</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
             </div>
-            <div className="block md:flex gap-2 mt-1">
+            <div>
+            {/* <div className="block md:flex gap-2 mt-1">
               <div className="input-container">
                 <label htmlFor="range">Budget Range(USD)*</label>
                 <select
                   name="range"
                   id="range"
                   className="input-field select"
-                  value={formData.range}
-                  onChange={handleChange}
+               
                     required
 
                 >
@@ -166,8 +157,7 @@ const ContactMe = () => {
                   name="country"
                   id="country"
                   className="input-field select"
-                  value={formData.country}
-                  onChange={handleChange}
+                  
                     required
 
                 >
@@ -179,7 +169,8 @@ const ContactMe = () => {
                   <option value="Canada">Canada</option>
                   <option value="Spain">Spain</option>
                 </select>
-              </div>
+              </div> 
+            </div>*/}
             </div>
             <div className="mt-1">
               <label htmlFor="message">Your Message</label> <br />
@@ -189,7 +180,7 @@ const ContactMe = () => {
                 placeholder="Enter here....."
                 required
                 className="input-field"
-                rows={9}
+                rows={4}
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
@@ -206,8 +197,7 @@ const ContactMe = () => {
               <div>
                 <h6 className="green-text">Address</h6>
                 <p>
-                  Noida Uttar Pradesh , <br />
-                  new jernay
+                  Noida, Uttar Pradesh <br />
                 </p>
               </div>
               <div>
@@ -224,13 +214,13 @@ const ContactMe = () => {
                   </a>
                 </p>
               </div>
-              <div>
+              {/* <div>
                 <h6 className="green-text">Time</h6>
                 <p>
                   Monday- Friday : 10:00 - 08:00 <br />
                   Saturday-Sunday: 10:00 - 06:00
                 </p>
-              </div>
+              </div> */}
             </div>
 
             <div className="bg-header rounded-b ">
