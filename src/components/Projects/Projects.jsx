@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import Project1 from "../../assets/project1.png";
 import Project2 from "../../assets/project2.png";
@@ -11,54 +8,52 @@ import { FaArrowRight } from "react-icons/fa";
 const projectsData = [
   {
     id: 1,
-    title: "Smart Financial Dashboard for Digital Management",
+    title: "Smart Grocery App for Seamless Shopping Experience",
     description:
-      "A modern dashboard for financial data visualization and management.",
+      "A dynamic grocery platform with product listings, wishlist, cart functionality, and order summary—focused on delivering.",
     image: Project1,
+    liveLink: "https://grocery-app-sage-theta.vercel.app/",
     tech: [
       { id: 1, list: "React JS" },
-      { id: 2, list: "CSS" },
-      { id: 3, list: "Chart" },
+      { id: 2, list: "Tailwind CSS" },
+      // { id: 3, list: "Chart" },
     ],
   },
   {
     id: 2,
-    title: "Modern VPN App Interface for Secure Connectivity",
+    title: "Snake Game with Real-Time Controls and Scoring",
     description:
-      "A modern UI design for secure VPN application connectivity.",
+      "A fun and interactive game where players control a growing snake, collect food, and avoid collisions while aiming for the highest score.",
     image: Project2,
     tech: [
-      { id: 1, list: "Flutter" },
-      { id: 2, list: "Dart" },
-      { id: 3, list: "Figma" },
+      { id: 1, list: "React JS" },
+      { id: 2, list: "Tailwind CSS" },
+      // { id: 3, list: "Figma" },
     ],
   },
   {
     id: 3,
-    title: "Creative Mobile UI Design",
+    title: "E-Commerce Platform for Modern Online Shopping",
     description:
-      "A creative UI design concept for modern mobile applications.",
+      "A dynamic online shopping platform that allows users to explore products, add items to cart or wishlist.",
     image: Project3,
     tech: [
-      { id: 1, list: "Flutter" },
-      { id: 2, list: "Dart" },
-      { id: 3, list: "Adobe" },
+      { id: 1, list: "React JS" },
+      { id: 2, list: "Tailwind CSS" },
+      // { id: 3, list: "Adobe" },
     ],
   },
 ];
 
 const Projects = () => {
-
   const renderProjectsData = projectsData.map((project) => {
     return (
       <div id="project" className="card flex gap-5 project" key={project.id}>
-        
         <div className="project-image">
           <img src={project.image} alt={project.title} />
         </div>
 
         <div className="project-content">
-
           <ul className="flex gap-1">
             {project.tech.map((technology) => (
               <li key={technology.id} className="list">
@@ -71,10 +66,23 @@ const Projects = () => {
 
           <p className="para">{project.description}</p>
 
-          <a href="#" className="icon-container border-inverse rotate">
+          {/* <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-container border-inverse rotate"
+          >
             <FaArrowRight />
-          </a>
+          </a> */}
 
+          <a
+            href={project.liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn mt-2 inline-block"
+          >
+            Live Demo
+          </a>
         </div>
       </div>
     );
@@ -83,16 +91,17 @@ const Projects = () => {
   return (
     <section>
       <div className="wrapper p-block-9 border-btn ">
-
         <div className="flex between gap-4   flex-col items-center justify-center text-center">
-
-          <div >
-            <span className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent" datatype="My Portfolio">
+          <div>
+            <span
+              className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"
+              datatype="My Portfolio"
+            >
               My Projects
             </span>
 
             <h2 className="font-medium leading-tight sm:leading-normal">
-              Let's Have a look  <br className="sm:hidden" />
+              Let's Have a look <br className="sm:hidden" />
               at <span className="green-text">My Projecs</span>
             </h2>
           </div>
@@ -100,36 +109,15 @@ const Projects = () => {
           <a href="#" className="btn self-end">
             View All Projects
           </a>
-
         </div>
 
-        <div className="flex column gap-5 mt-2">
-          {renderProjectsData}
-        </div>
-
+        <div className="flex column gap-5 mt-2">{renderProjectsData}</div>
       </div>
     </section>
   );
 };
 
 export default Projects;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from 'react'
 // import Project1 from '../../assets/project1.jpg'
@@ -165,8 +153,6 @@ export default Projects;
 //         )
 //     })
 
-
-
 //   return (
 //     <section>
 //         <div className="wrapper p-block-9">
@@ -196,14 +182,6 @@ export default Projects;
 // }
 
 // export default Projects
-
-
-
-
-
-
-
-
 
 // const projectsData = [
 //     {
@@ -267,13 +245,3 @@ export default Projects;
 //         ]
 //     },
 // ]
-
-
-
-
-
-
-
-
-
-
