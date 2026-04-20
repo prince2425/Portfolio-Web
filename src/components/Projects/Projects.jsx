@@ -140,9 +140,9 @@ const Projects = () => {
             </h2>
           </div>
 
-          <a href="#" className="btn self-end">
+          {/* <a href="#"  className="btn self-end">
             View All Projects
-          </a>
+          </a> */}
         </div>
 
         <div className="flex column gap-5 mt-2">{renderProjectsData}</div>
