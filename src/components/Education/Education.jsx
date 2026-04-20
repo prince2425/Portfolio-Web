@@ -48,7 +48,7 @@ const Education = () => {
 
             <div className=' flex gap-5 mt-5'>
               <Card item={education} title='Education' icon={<RiGraduationCapFill />}/>
-              <Card item={workExperience} title='Work Experience' icon={<BsSuitcaseLgFill />}/>
+              {/* <Card item={workExperience} title='Work Experience' icon={<BsSuitcaseLgFill />}/> */}
             </div>
         </div>
     </section>
