@@ -2,6 +2,8 @@ import React from "react";
 import Project1 from "../../assets/project1.png";
 import Project2 from "../../assets/project2.png";
 import Project3 from "../../assets/project3.jpg";
+import Project4 from "../../assets/project4.jpg";
+import Project5 from "../../assets/project5.png";
 import "./Projects.css";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -25,7 +27,7 @@ const projectsData = [
     description:
       "A fun and interactive game where players control a growing snake, collect food, and avoid collisions while aiming for the highest score.",
     image: Project2,
-        liveLink: "https://clever-snake-5e7746.netlify.app/",
+    liveLink: "https://clever-snake-5e7746.netlify.app/",
 
     tech: [
       { id: 1, list: "React JS" },
@@ -39,7 +41,35 @@ const projectsData = [
     description:
       "A dynamic online shopping platform that allows users to explore products, add items to cart or wishlist.",
     image: Project3,
-            liveLink: "https://e-commerce-qvjh.vercel.app/",
+    liveLink: "https://e-commerce-qvjh.vercel.app/",
+
+    tech: [
+      { id: 1, list: "React JS" },
+      { id: 2, list: "Tailwind CSS" },
+      // { id: 3, list: "Adobe" },
+    ],
+  },
+  {
+    id: 4,
+    title: "To-Do App for Efficient Task Management",
+    description:
+      "An interactive task management application that enables users to create, update, and delete tasks efficiently.",
+    image: Project4,
+    liveLink: "https://todo-kappa-lime.vercel.app/",
+
+    tech: [
+      { id: 1, list: "React JS" },
+      { id: 2, list: "Tailwind CSS" },
+      // { id: 3, list: "Adobe" },
+    ],
+  },
+  {
+    id: 5,
+    title: "QR Code Generator for Quick Data Sharing",
+    description:
+      "Developed a QR Code Generator application that allows users to convert text, URLs, and other data into scannable QR codes instantly.",
+    image: Project5,
+    liveLink: "https://weather-app-lir7.vercel.app/",
 
     tech: [
       { id: 1, list: "React JS" },

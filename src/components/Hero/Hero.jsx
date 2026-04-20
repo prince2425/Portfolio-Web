@@ -1,6 +1,6 @@
 import React from "react";
 import HeroImage from "../../assets/image1.png";
-import CV from "../../assets/Resume.docx";
+import CV from "../../assets/Resume.pdf";
 import "./Hero.css";
 import {
   FaFacebookF,
