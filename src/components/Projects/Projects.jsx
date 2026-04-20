@@ -25,6 +25,8 @@ const projectsData = [
     description:
       "A fun and interactive game where players control a growing snake, collect food, and avoid collisions while aiming for the highest score.",
     image: Project2,
+        liveLink: "https://clever-snake-5e7746.netlify.app/",
+
     tech: [
       { id: 1, list: "React JS" },
       { id: 2, list: "Tailwind CSS" },
@@ -37,6 +39,8 @@ const projectsData = [
     description:
       "A dynamic online shopping platform that allows users to explore products, add items to cart or wishlist.",
     image: Project3,
+            liveLink: "https://e-commerce-qvjh.vercel.app/",
+
     tech: [
       { id: 1, list: "React JS" },
       { id: 2, list: "Tailwind CSS" },
