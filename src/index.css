@@ -59,16 +59,16 @@ li {
   justify-content: center;
 }
 
-.wrapper {
+ .wrapper {
   max-width: 1400px;
   margin: auto;
   padding-inline: 2rem;
 }
 
-/* .wrapper {
+.wrapper {
   width: 100%;
   overflow: hidden;
-} */
+}
 
 
 

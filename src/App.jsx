@@ -22,7 +22,7 @@ const App = () => {
       <Projects/>
       <Headline />
       <Testimonial />
-      <ContactMe />
+      <ContactMe /> 
       {/* <Footer /> */}
     </div>
   )

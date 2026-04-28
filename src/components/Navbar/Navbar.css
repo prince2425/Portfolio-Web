@@ -1,3 +1,4 @@
+
 .navbar{
     min-height:14vh;
     display:flex;
@@ -169,7 +170,24 @@ box-shadow: 0 8px 10px -2px rgba(235, 200, 200, 0.313);
 
 
 
-/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  
 .navbar{
     min-height:14vh;
 }
@@ -213,8 +231,8 @@ logo span{
     /* color: var(--fix-clr);
     font-weight: bold;
     font-size: .9rem;
-    border-radius: 100vw; */
-    /* border: .1rem solid var(--accent-clr); 
+    border-radius: 100vw;
+    border: .1rem solid var(--accent-clr); 
     transition: .3s ease-in-out;
 }
 
@@ -309,7 +327,7 @@ logo span{
         left: -100%;
         transform: translateX(-50%);
         background: rgba(var(--surface-clr),0.3);
-        /* backdrop-filter:blue(20px); 
+        backdrop-filter:blue(20px); 
         border: .3rem solid rgba(215, 45, 45, 0.2);
         width: 20rem;
         padding: 1.5rem;
@@ -322,4 +340,7 @@ logo span{
         left: 50%;
         transform: translateX(-50%);
     }
-}  */
+}   */
+
+
+
