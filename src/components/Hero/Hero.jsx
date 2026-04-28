@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "@fontsource/roboto";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 const Hero = () => {
@@ -76,9 +77,9 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-2 hight">
-            <a href="#" className="btn">
+            <AnchorLink className="btn"  href="#project">
               View My Works
-            </a>
+            </AnchorLink>
 
             <a href={CV} download="MyCV" className=" btn border-btn ">
               Download CV
