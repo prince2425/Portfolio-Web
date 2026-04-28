@@ -59,7 +59,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <a
             href="#"
-            className="icon-container border-inverse"
+            className=" border-inverse  w-[2.7rem] aspect-square rounded-full text-white text-[1.4rem] flex justify-center items-center border-none cursor-pointer"
             onClick={toggleTheme}
           >
             {theme === "dark" ? <MdOutlineWbSunny /> : <IoMoonOutline />}
