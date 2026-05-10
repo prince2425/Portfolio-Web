@@ -10,11 +10,13 @@ import Testimonial from './components/Testimonial/Testimonial'
 import ContactMe from './components/ContactMe/ContactMe'
 import Footer from './components/Footer/Footer'
 import Education from './components/Education/Education'
+// import Plans from './components/Plans/Plans'
+
 const App = () => {
   return (
     <div>
       <Navbar/>
-       <Hero/> 
+      <Hero/> 
       <Headline/>
        <AboutMe/>
        <Education />
@@ -22,7 +24,8 @@ const App = () => {
       <Projects/>
       <Headline />
       <Testimonial />
-      <ContactMe /> 
+      <ContactMe />  
+    
       {/* <Footer /> */}
     </div>
   )

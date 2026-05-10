@@ -226,7 +226,7 @@ const ContactMe = () => {
             <div className="bg-header rounded-b ">
               <h5 className="green-text pt-3">Stay Connected</h5>
 
-              <div className="flex gap-1.75 md:gap-1 pt-1.5">
+              <div className="flex gap-1.75 md:gap-1 pt-3 ">
                 <a
                   href="https://www.facebook.com/prince.singh.760369/?_rdr"
                   target="_blank"
@@ -279,3 +279,6 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
+
+
+

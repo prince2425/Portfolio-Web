@@ -35,7 +35,7 @@ const Hero = () => {
             <a
               href="https://www.facebook.com/prince.singh.760369/?_rdr"
               target="_blank"
-              className="icon-container black-inverse"
+              className="icon-container black-inverse "
             >
               <FaFacebookF />
             </a>

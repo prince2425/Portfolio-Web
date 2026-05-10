@@ -1,17 +1,12 @@
-
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 @import "tailwindcss";
 
 * {
   margin: 0;
   box-sizing: border-box;
-     font-family: "Playfair Display", serif;
-
-
+  font-family: "Playfair Display", serif;
 }
-
-
 
 :root {
   --background-clr: #080808;
@@ -59,7 +54,7 @@ li {
   justify-content: center;
 }
 
- .wrapper {
+.wrapper {
   max-width: 1400px;
   margin: auto;
   padding-inline: 2rem;
@@ -69,8 +64,6 @@ li {
   width: 100%;
   overflow: hidden;
 }
-
-
 
 img {
   max-width: 100%;

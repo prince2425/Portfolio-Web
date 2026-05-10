@@ -35,7 +35,7 @@ const Footer = () => {
               Collaborating with various company.
             </p>
 
-            <div className="flex gap-[1.75rem] md:gap-1 lg:gap-1 m-4 w-full pb-4">
+            <div className="flex gap-7 md:gap-1 lg:gap-1 m-4 w-full pb-4">
               <a
                 href="https://www.facebook.com/prince.singh.760369/?_rdr"
                 target="_blank"
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <ul className="footer-wrapper text-white">
+          {/* <ul className="footer-wrapper text-white">
             <li>
               <h6 className="green-text">Navigation</h6>
             </li>
@@ -115,7 +115,7 @@ const Footer = () => {
                 Contact Me
               </a>
             </li>
-          </ul>
+          </ul> */}
           <ul className="footer-wrapper text-white ">
             <li className="">
               <h6 className="green-text">Contact</h6>
@@ -125,24 +125,24 @@ const Footer = () => {
                 8303-508-816
               </a>
             </li>
-            <li className="mt-2">
+            {/* <li className="mt-2">
               <a href="#" className="link">
                 www.example.com
               </a>
-            </li>
+            </li> */}
             <li className="mt-2">
               <a href="#" className="link">
                 shiprincesingh@gmail.com
               </a>
             </li>
-            <li className="mt-2">
+            {/* <li className="mt-2">
               <a href="#" className="link">
                 1523 Royal jj mnjjh
               </a>
-            </li>
+            </li> */}
           </ul>
 
-          <div className="footer-wrapper ">
+          {/* <div className="footer-wrapper ">
             <h6 className="green-text">Get the latest Information</h6>
             <div className="footer-input mt-2 flex items-stretch">
               <input
@@ -155,7 +155,7 @@ const Footer = () => {
                 <FaPaperPlane />
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

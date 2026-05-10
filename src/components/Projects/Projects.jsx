@@ -1,9 +1,11 @@
 import React from "react";
 import Project1 from "../../assets/project1.png";
 import Project2 from "../../assets/project2.png";
-import Project3 from "../../assets/project3.jpg";
+import Project3 from "../../assets/project6.png";
 import Project4 from "../../assets/project4.jpg";
 import Project5 from "../../assets/project5.png";
+import Project6 from "../../assets/project3.jpg";
+
 import "./Projects.css";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -37,17 +39,18 @@ const projectsData = [
   },
   {
     id: 3,
-    title: "E-Commerce Platform for Modern Online Shopping",
+     title: "E-commerce Platform MERN",
     description:
-      "A dynamic online shopping platform that allows users to explore products, add items to cart or wishlist.",
+      "A full-stack E-commerce application built using the MERN stack (MongoDB, Express, React, Node.js) featuring user authentication, product browsing, cart management, and secure checkout..",
     image: Project3,
-    liveLink: "https://e-commerce-qvjh.vercel.app/",
+    liveLink: "",
 
     tech: [
       { id: 1, list: "React JS" },
-      { id: 2, list: "Tailwind CSS" },
-      // { id: 3, list: "Adobe" },
+      { id: 2, list: "Node.js " },
+      { id: 3, list: "MongoDb" },
     ],
+    
   },
   {
     id: 4,
@@ -76,6 +79,21 @@ const projectsData = [
       { id: 2, list: "Tailwind CSS" },
       // { id: 3, list: "Adobe" },
     ],
+  },
+  {
+    id: 6,
+    title: "E-Commerce Platform for Modern Online Shopping",
+    description:
+      "A dynamic online shopping platform that allows users to explore products, add items to cart or wishlist.",
+    image: Project6,
+    liveLink: "https://e-commerce-qvjh.vercel.app/",
+
+    tech: [
+      { id: 1, list: "React JS" },
+      { id: 2, list: "Tailwind CSS" },
+      // { id: 3, list: "Adobe" },
+    ],
+   
   },
 ];
 

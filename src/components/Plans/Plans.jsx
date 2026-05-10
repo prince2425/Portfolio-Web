@@ -1,7 +1,7 @@
 import React from "react";
 import {FaArrowRight} from "reacct-icons/fa"
 import {FaCheck} from "reacct-icons/fa6"
-import './Plans.css'
+// import './Plans.css'
 
 const Plans = () => {
 
