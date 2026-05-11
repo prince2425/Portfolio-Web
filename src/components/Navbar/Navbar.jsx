@@ -10,6 +10,21 @@ const Navbar = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [theme, setTheme] = useState("dark");
 
+useEffect(() => {
+  if (isMenuActive) {
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = 'auto';
+  }
+  
+  return () => {
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = 'auto';
+  };
+}, [isMenuActive]);
+
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
@@ -57,13 +72,16 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#"
-            className=" border-inverse  w-[2.7rem] aspect-square rounded-full text-white text-[1.4rem] flex justify-center items-center border-none cursor-pointer"
-            onClick={toggleTheme}
-          >
-            {theme === "dark" ? <MdOutlineWbSunny /> : <IoMoonOutline />}
-          </a>
+         <a
+  href="#"
+  className={`border-inverse w-[2.7rem] aspect-square rounded-full text-[1.4rem] flex justify-center items-center border-none cursor-pointer transition-colors duration-300 ${
+    theme === "dark" ? "text-white" : "text-gray-900"
+  }`}
+  onClick={toggleTheme}
+>
+  {theme === "dark" ? <MdOutlineWbSunny /> : <IoMoonOutline />}
+</a>
+
 
           {/* <a href="#" className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-3 py-2 font-bold rounded-full"> */}
          <AnchorLink href="#contactme" className="btn btn2">
