@@ -36,22 +36,22 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="desktop-menu md:flex items-center gap-x-15 hidden">
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#home">Home</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#service">Services</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
              <AnchorLink href="#about">About Me</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#project"> Projects </AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#testimonial">Testimonials</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#contactme">Contact Me</AnchorLink>
           </li>
         </ul>

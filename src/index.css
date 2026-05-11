@@ -18,10 +18,13 @@
 }
 
 [data-theme="light"] {
-  --background-clr: #fff;
-  --surface-clr: #f5f5f5;
-  --text-primary-clr: #080808;
-  --text-secondary-clr: #b333;
+  --background-clr: #ffffffee;
+  /* --background-clr: #fff; */
+  --surface-clr: #f5f5f5b3;
+  --text-primary-clr: black;
+  /* --text-primary-clr: #080101; */
+  --text-secondary-clr: black;
+  /* --text-secondary-clr: #b333; */
 }
 
 body {
