@@ -80,6 +80,9 @@ const Navbar = () => {
         <ul
           className={`mobile-menu ${isMenuActive ? "mobile-menu-active" : ""}`}
         >
+           <a href="#" className="absolute top-0 right-0 p-4 "  onClick={toggleMenu}>
+            {isMenuActive ? <FaXmark size={25}  /> : ''}
+          </a>
           <li className="nav-link item-container">
             <AnchorLink href="#home" onClick={closeMenu}>Home</AnchorLink>
           </li>
