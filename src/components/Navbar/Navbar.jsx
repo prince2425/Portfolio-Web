@@ -70,7 +70,7 @@ const Navbar = () => {
            Let's Talk
          </AnchorLink>
 
-          <a href="#" className="hamburger" onClick={toggleMenu}>
+          <a href="#" className="hamburger"  onClick={toggleMenu}>
             {isMenuActive ? <FaXmark /> : <FaBars />}
           </a>
         </div>
@@ -80,22 +80,22 @@ const Navbar = () => {
         <ul
           className={`mobile-menu ${isMenuActive ? "mobile-menu-active" : ""}`}
         >
-          <li>
+          <li className="nav-link item-container">
             <AnchorLink href="#home" onClick={closeMenu}>Home</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#service" onClick={closeMenu}>Services</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
              <AnchorLink href="#about" onClick={closeMenu}>About Me</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#project" onClick={closeMenu}> Projects </AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#testimonial" onClick={closeMenu}>Testimonials</AnchorLink>
           </li>
-          <li>
+          <li className="nav-link">
             <AnchorLink href="#contactme" onClick={closeMenu}>Contact Me</AnchorLink>
           </li>
 

@@ -139,6 +139,26 @@ box-shadow: 0 8px 10px -2px rgba(235, 200, 200, 0.313);
     display:none;
 }
 
+
+/* Mobile Menu Link Hover */
+.mobile-menu a:hover {
+    color: #FB9935;
+}
+
+/* Optional: Add the same underline effect for mobile menu */
+.mobile-menu .nav-link::after {
+    background-image: linear-gradient(
+        to right,
+        rgb(251, 146, 60),
+        rgb(196, 72, 6)
+    );
+}
+
+/* Make sure mobile menu links inherit the gradient underline */
+.mobile-menu a {
+    transition: .3s;
+}
+
 /* MOBILE MENU */
 
 .mobile-menu{
@@ -229,6 +249,30 @@ box-shadow: 0 8px 10px -2px rgba(235, 200, 200, 0.313);
 .nav-link:hover::after {
     width: 100%;
 }
+
+
+
+
+
+/* ...  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
