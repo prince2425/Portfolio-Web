@@ -11,7 +11,7 @@ const AboutMe = () => {
           <img
             src={AboutImage}
             alt="Abou"
-            className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover p-1 md:p-9 lg:p-15"
+            className="imagehover w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover p-1 md:p-9 lg:p-15"
           />
         </div>
 

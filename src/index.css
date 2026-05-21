@@ -99,4 +99,118 @@ img {
 .btn:hover {
   background: transparent;
   color: var(--accent-clr);
+  transform: translateY(-6px);
+  box-shadow:
+    0 10px 15px rgba(251, 146, 60, 0.5),
+    0 0 10px rgba(249, 115, 22, 0.55);
+}
+
+.imagehover {
+  transition: transform 0.5s ease-in-out; /* Smooth start + end */
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+.imagehover:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  flex: 1;
+
+  padding: 2rem;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease,
+    background 0.45s ease;
+
+  will-change: transform;
+  cursor: pointer;
+}
+
+/* Top Glow Effect */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(249, 115, 22, 0.18),
+      transparent 35%
+    );
+
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+}
+
+/* Border Glow */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(249,115,22,0.4),
+    transparent,
+    rgba(251,146,60,0.2)
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-14px) scale(1.03);
+
+  border-color: rgba(244, 104, 4, 0.25);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.22),
+    0 0 45px rgba(249,115,22,0.20);
+}
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+}
+
+
+.card::before,
+.card::after {
+  pointer-events: none;
 }

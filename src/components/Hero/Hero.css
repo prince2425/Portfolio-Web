@@ -24,6 +24,7 @@
     /* height: auto; ✅ remove vh */
 }
 
+
 .sub-text{
     color: var(--text-primary-clr);
     font-size: 1.9rem;
@@ -92,10 +93,3 @@ p{
         padding-top: 3rem;
     }
 }
-
-
-
-
-
-
-
