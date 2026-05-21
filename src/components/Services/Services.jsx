@@ -58,7 +58,7 @@ const Services = () => {
       <div id="service" className="wrapper p-block-9 border-btn">
          <div className="flex between gap-4 flex-col items-center justify-center text-center">
           <div className="flex flex-col items-center justify-center text-center">
-            <span className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overflow-hidden" datatype="Services">
+            <span className=" text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text  middle" datatype="Services">
               My Specialization
             </span>
 
