@@ -22,7 +22,7 @@ const testimonialsData = [
     title: "CEO, Software Company",
     image: Profile1,
     rating: 5,
-    text: "Very professional and skilled developer. Amazing experience working together.",
+    text: "Very professional and skilled developer. Amazing experience together.",
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ const testimonialsData = [
     title: "Founder, Startup",
     image: Profile3,
     rating: 5,
-    text: "Great frontend skills and clean code structure.",
+    text: "Great frontend skills and clean code structure and responsive.",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const testimonialsData = [
     title: "UI Designer",
     image: Profile4,
     rating: 5,
-    text: "Very responsive and excellent communication.",
+    text: "Very responsive and excellent communication skills perfect work.",
   },
   {
     id: 5,
@@ -54,7 +54,7 @@ const testimonialsData = [
     title: "Business Owner",
     image: Profile5,
     rating: 4,
-    text: "Delivered quality work before deadline.",
+    text: "Delivered quality work before deadline and less price.",
   },
   // NEW TESTIMONIAL
   {
@@ -63,7 +63,7 @@ const testimonialsData = [
     title: "Product Manager",
     image: Profile6,
     rating: 5,
-    text: "Absolutely outstanding work! The frontend is flawless and the delivery was ahead of schedule.",
+    text: "Absolutely outstanding work! The frontend is flawless of schedule.",
   },
 ];
 
@@ -104,7 +104,7 @@ const Testimonial = () => {
       <div className="wrapper p-block-9 border-btn">
         {/* Heading */}
         <div className="heading">
-          <span className="subtitle">Client Testimonial</span>
+          <span className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text  middle">Client Testimonial</span>
           <h2>
             Testimonial That <br />
             <span className="green-text">Speaks To My Result</span>
@@ -124,11 +124,11 @@ const Testimonial = () => {
                     <div>
                       <h4>{review.name}</h4>
                       <p className="designation">{review.title}</p>
-                      <div className="rating">
+                      {/* <div className="rating">
                         {Array.from({ length: review.rating }, (_, i) => (
                           <FaStar key={i} className="rating-star" />
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                   <p className="testimonial-text">{review.text}</p>
