@@ -174,6 +174,47 @@ h4{
 }
 
 
+/* =========================
+   CARD REVEAL ANIMATION
+========================= */
+
+.reveal-card {
+  opacity: 0;
+  transform: scale(0.85) translateY(40px);
+
+  animation: zoomReveal 0.8s ease forwards;
+
+  /* smooth animation */
+  will-change: transform, opacity;
+}
+
+/* Delay for each card */
+.reveal-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.reveal-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.reveal-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Keyframes */
+@keyframes zoomReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
 
 .card h4 {
   margin-top: 1.6rem;
