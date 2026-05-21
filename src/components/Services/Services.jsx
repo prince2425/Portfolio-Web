@@ -40,7 +40,7 @@ const ServicesData = [
 const Services = () => {
   const renderServicesData = ServicesData.map((service) => {
     return (
-      <div className="card" key={service.id}>
+      <div className="card  reveal-card" key={service.id}>
         <span className="service-icon">{service.icon}</span>
         <h4 className="font-medium">{service.title}</h4>
         <p>{service.description}</p>
