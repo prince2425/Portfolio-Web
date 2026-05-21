@@ -8,7 +8,7 @@ import Profile2 from "../../assets/profile2.jpg";
 import Profile3 from "../../assets/profile3.jpg";
 import Profile4 from "../../assets/profile4.jpg";
 import Profile5 from "../../assets/profile5.jpg";
-// import Profile6 from "../../assets/profile6.jpg";   // <-- new image
+import Profile6 from "../../assets/profile3.jpg";   // <-- new image
 
 import { FaStar } from "react-icons/fa6";
 
@@ -57,14 +57,14 @@ const testimonialsData = [
     text: "Delivered quality work before deadline.",
   },
   // NEW TESTIMONIAL
-  // {
-  //   id: 6,
-  //   name: "Olivia Chen",
-  //   title: "Product Manager",
-  //   image: Profile3,
-  //   rating: 5,
-  //   text: "Absolutely outstanding work! The frontend is flawless and the delivery was ahead of schedule.",
-  // },
+  {
+    id: 6,
+    name: "Olivia Chen",
+    title: "Product Manager",
+    image: Profile6,
+    rating: 5,
+    text: "Absolutely outstanding work! The frontend is flawless and the delivery was ahead of schedule.",
+  },
 ];
 
 const Testimonial = () => {
