@@ -241,7 +241,7 @@
 /* ======================
    MOBILE FIX (IMPROVED)
 ====================== */
-
+/* Mobile fix – sirf 1 card show karega */
 @media (max-width: 768px) {
   .subtitle {
     font-size: 2rem;
@@ -251,22 +251,26 @@
     font-size: 2rem;
   }
 
-  /* Fix slider margins */
+  /* Slider ko fix karein */
+  .slider-wrapper {
+    overflow-x: hidden;
+  }
+
   .slick-list {
     margin: 0 !important;
-    overflow: visible; /* Prevents clipping */
+    overflow: hidden !important;
   }
 
   .slick-slide {
-    padding: 0 8px !important; /* Add small gap instead of 0 */
+    padding: 0 !important;
   }
 
   .testimonial-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-height: 320px; /* Increased to fit longer text */
+    width: 95% !important;
+    max-width: 350px !important;  /* Card ki width limit */
+    margin: 0 auto !important;
+    min-height: auto;
     padding: 1.2rem;
-    margin: 0 auto;
   }
 
   .profile {
@@ -275,21 +279,24 @@
   }
 
   .testimonial-card h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    word-break: break-word;
   }
 
   .designation {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .testimonial-text {
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5;
+    word-break: break-word;
   }
 
-  /* Ensure name and title don't overflow */
-  .top-content {
-    gap: 0.8rem;
+  /* Rating stars chhote */
+  .rating-star {
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -320,5 +327,17 @@
 
   .testimonial-text {
     font-size: 0.85rem;
+  }
+}
+
+/* Force only one slide visible on mobile */
+@media (max-width: 768px) {
+  .slick-track {
+    width: 100% !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .slick-slide {
+    width: 100% !important;
   }
 }

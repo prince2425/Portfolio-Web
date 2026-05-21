@@ -69,27 +69,35 @@ const testimonialsData = [
 
 const Testimonial = () => {
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    pauseOnHover: true,
+  dots: true,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 2,      // Desktop
+  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  pauseOnHover: true,
 
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerMode: false,
-        },
+  responsive: [
+    {
+      breakpoint: 992,   // Tablet ke liye bhi 1 card
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
       },
-    ],
-  };
+    },
+    {
+      breakpoint: 768,   // Mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+      },
+    },
+  ],
+};
 
   return (
     <section id="testimonial">
