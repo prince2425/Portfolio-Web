@@ -37,28 +37,67 @@ const ServicesData = [
 
 const Services = () => {
 
+  const handleMouseMove = (e) => {
+  const card = e.currentTarget;
+
+  const rect = card.getBoundingClientRect();
+
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+
+  const rotateX = ((y - centerY) / centerY) * -12;
+  const rotateY = ((x - centerX) / centerX) * 12;
+
+  card.style.transform = `
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+    scale(1.02)
+  `;
+};
+
+const handleMouseLeave = (e) => {
+  e.currentTarget.style.transform =
+    "rotateX(0deg) rotateY(0deg) scale(1)";
+};
+
   const { sectionRef, show } = useScrollAnimation();
 
 const renderServicesData = ServicesData.map((service, index) => {
   return (
     <div
-      key={service.id}
-      className={`card reveal-card animate-left ${
-        show ? "show-left" : "hidden-left"
-      }`}
-      style={{
-        transitionDelay: `${index * 200}ms`,
-      }}
-    >
-      <span className="service-icon">{service.icon}</span>
-      <h4 className="font-medium">{service.title}</h4>
-      <p>{service.description}</p>
+  key={service.id}
+  className={`card reveal-card animate-left ${
+    show ? "show-left" : "hidden-left"
+  }`}
+  style={{
+    transitionDelay: `${index * 200}ms`,
+  }}
+>
+  <div
+    className="card3d"
+    onMouseMove={handleMouseMove}
+    onMouseLeave={handleMouseLeave}
+  >
+    <span className="service-icon float-item">
+      {service.icon}
+    </span>
 
-      <a href="#" className="link">
-        Learn More &nbsp;
-        <FaArrowRight />
-      </a>
-    </div>
+    <h4 className="float-item title">
+      {service.title}
+    </h4>
+
+    <p className="float-item desc">
+      {service.description}
+    </p>
+
+    <a href="#" className="link float-item">
+      Learn More <FaArrowRight />
+    </a>
+  </div>
+</div>
   );
 });
 

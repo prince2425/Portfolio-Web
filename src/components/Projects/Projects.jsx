@@ -101,11 +101,39 @@ const projectsData = [
 
 const Projects = () => {
   const { sectionRef, show } = useScrollAnimation();
+
+  const handleMouseMove = (e) => {
+  const card = e.currentTarget;
+
+  const rect = card.getBoundingClientRect();
+
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+
+  const rotateX = ((y - centerY) / centerY) * -12;
+  const rotateY = ((x - centerX) / centerX) * 12;
+
+  card.style.transform = `
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+    scale(1.02)
+  `;
+};
+
+const handleMouseLeave = (e) => {
+  e.currentTarget.style.transform =
+    "rotateX(0deg) rotateY(0deg) scale(1)";
+};
   
   const renderProjectsData = projectsData.map((project) => {
     return (
       <div id="project" className="card flex gap-5 project" key={project.id}>
-        <div className="project-image">
+        <div className="project-image card3d"
+    onMouseMove={handleMouseMove}
+    onMouseLeave={handleMouseLeave} >
           <img src={project.image} alt={project.title} />
         </div>
 
@@ -145,7 +173,7 @@ const Projects = () => {
   });
 
   return (
-    <section>
+    <section >
       <div className="wrapper p-block-9 border-btn ">
         <div className="flex between gap-4   flex-col items-center justify-center text-center">
           <div>

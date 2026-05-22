@@ -224,58 +224,6 @@ img {
 
 
 
-/* 
-
-.animate-left,
-.animate-right {
-  transition: all 1s ease-in-out;
-}
-
-.hidden-left {
-  opacity: 0;
-  transform: translateX(-100px);
-}
-
-.hidden-right {
-  opacity: 0;
-  transform: translateX(100px);
-}
-
-.show-left,
-.show-right {
-  opacity: 1;
-  transform: translateX(0);
-} */
-
-/* 
-.animate-left,
-.animate-right {
-  opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  will-change: transform, opacity;
-}
-
-.hidden-left {
-  opacity: 0;
-  transform: translateX(-120px);
-}
-
-.hidden-right {
-  opacity: 0;
-  transform: translateX(120px);
-}
-
-.show-left {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.show-right {
-  opacity: 1;
-  transform: translateX(0);
-} */
-
-
 
 
 /* LEFT ANIMATION */
@@ -302,4 +250,103 @@ img {
   opacity: 1;
   transform: translateX(0);
   transition: all 0.8s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   ACETERNITY STYLE 3D CARD
+========================= */
+
+.card {
+  perspective: 1100px;
+}
+
+.card3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  /* padding: 1.5rem;
+  border-radius: 1rem;
+
+  background: var(--surface-clr);
+  border: 1px solid rgba(123,123,123,0.2); */
+
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+
+  cursor: pointer;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* floating effect */
+.float-item {
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease;
+}
+
+/* different depth like aceternity */
+.service-icon {
+  transform: translateZ(60px);
+}
+
+.title {
+  transform: translateZ(50px);
+}
+
+.desc {
+  transform: translateZ(35px);
+}
+
+.link {
+  transform: translateZ(70px);
+}
+
+/* hover pe sab air me float */
+.card3d:hover .service-icon {
+  transform: translateZ(100px) scale(1.1);
+}
+
+.card3d:hover .title {
+  transform: translateZ(80px);
+}
+
+.card3d:hover .desc {
+  transform: translateZ(55px);
+}
+
+.card3d:hover .link {
+  transform: translateZ(90px);
+}
+
+/* shine effect */
+.card3d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255,255,255,0.12),
+    transparent 60%
+  );
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card3d:hover::before {
+  opacity: 1;
 }
