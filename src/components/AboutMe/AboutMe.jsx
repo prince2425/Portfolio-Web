@@ -2,12 +2,22 @@ import React from "react";
 import AboutImage from "../../assets/about_image2.png";
 import "./AboutMe.css";
 import CV from "../../assets/Resume.docx";
+import useScrollLeftAnimation from "../../hooks/useScrollLeftAnimation";
+import useScrollRightAnimation from "../../hooks/useScrollRightAnimation";
 
 const AboutMe = () => {
+  const { leftRef, showLeft } = useScrollLeftAnimation();
+  const { rightRef, showRight } = useScrollRightAnimation();
+
   return (
     <section>
       <div id="about" className="flex gap-20 wrapper p-block-9 border-btn ">
-        <div className="flex-1 basis-75">
+        <div
+          ref={leftRef}
+          className={`flex-1 basis-75 animate-left ${
+            showLeft ? "left-show" : "left-hidden"
+          }`}
+        >
           <img
             src={AboutImage}
             alt="Abou"
@@ -15,7 +25,12 @@ const AboutMe = () => {
           />
         </div>
 
-        <div className="flex-1 basis-75">
+        <div
+          ref={rightRef}
+          className={` animate-right ${
+            showRight ? "right-show" : "right-hidden"
+          }`}
+        >
           <span
             className=" text-6xl font-medium bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent "
             datatype="About Me"
@@ -46,26 +61,31 @@ const AboutMe = () => {
           </p>
 
           <div className="flex lg:flex gap-2 my-12 px-1">
-         
             <div className="pr-3">
               <h6 className="text-3xl lg:text-4xl font-medium text-[var(--accent-clr)] text-center">
                 10+
               </h6>
-              <p>Projects <br className="block sm:hidden" /> Completed</p>
+              <p>
+                Projects <br className="block sm:hidden" /> Completed
+              </p>
             </div>
 
             <div className="px-3">
               <h6 className="text-3xl lg:text-4xl font-medium text-[var(--accent-clr)] text-center">
                 5+
               </h6>
-              <p>Industry <br className="block sm:hidden" /> Covered</p>
+              <p>
+                Industry <br className="block sm:hidden" /> Covered
+              </p>
             </div>
 
             <div className="px-3">
               <h6 className="text-3xl lg:text-4xl font-medium  text-[var(--accent-clr)] text-center">
                 0.2+
               </h6>
-              <p>Years of <br className="block sm:hidden" /> Experience</p>
+              <p>
+                Years of <br className="block sm:hidden" /> Experience
+              </p>
             </div>
           </div>
 

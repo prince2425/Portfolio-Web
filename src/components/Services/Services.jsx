@@ -2,16 +2,14 @@
 
 
 
-
-
-
-
 import React from "react";
 import "./Services.css";
 import { FaLaptopCode } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 const ServicesData = [
   {
     id: 1,
@@ -38,23 +36,34 @@ const ServicesData = [
 
 
 const Services = () => {
-  const renderServicesData = ServicesData.map((service) => {
-    return (
-      <div className="card  reveal-card" key={service.id}>
-        <span className="service-icon">{service.icon}</span>
-        <h4 className="font-medium">{service.title}</h4>
-        <p>{service.description}</p>
 
-        <a href="#" className="link">
-          Learn More &nbsp;
-          <FaArrowRight />
-        </a>
-      </div>
-    );
-  });
+  const { sectionRef, show } = useScrollAnimation();
+
+const renderServicesData = ServicesData.map((service, index) => {
+  return (
+    <div
+      key={service.id}
+      className={`card reveal-card animate-left ${
+        show ? "show-left" : "hidden-left"
+      }`}
+      style={{
+        transitionDelay: `${index * 200}ms`,
+      }}
+    >
+      <span className="service-icon">{service.icon}</span>
+      <h4 className="font-medium">{service.title}</h4>
+      <p>{service.description}</p>
+
+      <a href="#" className="link">
+        Learn More &nbsp;
+        <FaArrowRight />
+      </a>
+    </div>
+  );
+});
 
   return (
-    <section>
+    <section ref={sectionRef}>
       <div id="service" className="wrapper p-block-9 border-btn">
          <div className="flex between gap-4 flex-col items-center justify-center text-center">
           <div className="flex flex-col items-center justify-center text-center">

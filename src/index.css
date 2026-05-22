@@ -97,8 +97,14 @@ img {
 }
 
 .btn:hover {
-  background: transparent;
-  color: var(--accent-clr);
+  /* background: transparent; */
+  background: linear-gradient(
+    to right,
+    rgb(140, 115, 214),
+    rgb(67, 18, 225)
+  );
+  color: var(--text-primary-clr);
+
   transform: translateY(-6px);
   box-shadow:
     0 10px 15px rgba(251, 146, 60, 0.5),
@@ -218,5 +224,82 @@ img {
 
 
 
+/* 
+
+.animate-left,
+.animate-right {
+  transition: all 1s ease-in-out;
+}
+
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.show-left,
+.show-right {
+  opacity: 1;
+  transform: translateX(0);
+} */
+
+/* 
+.animate-left,
+.animate-right {
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.hidden-left {
+  opacity: 0;
+  transform: translateX(-120px);
+}
+
+.hidden-right {
+  opacity: 0;
+  transform: translateX(120px);
+}
+
+.show-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.show-right {
+  opacity: 1;
+  transform: translateX(0);
+} */
 
 
+
+
+/* LEFT ANIMATION */
+.left-hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.8s ease-in-out;
+}
+
+.left-show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s ease-in-out;
+}
+
+/* RIGHT ANIMATION */
+.right-hidden {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-in-out;
+}
+
+.right-show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s ease-in-out;
+}

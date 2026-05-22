@@ -8,6 +8,8 @@ import Project6 from "../../assets/project3.jpg";
 
 import "./Projects.css";
 import { FaArrowRight } from "react-icons/fa";
+import useScrollAnimation from "../../hooks/useScrollAnimation";
+
 
 const projectsData = [
   {
@@ -98,6 +100,8 @@ const projectsData = [
 ];
 
 const Projects = () => {
+  const { sectionRef, show } = useScrollAnimation();
+  
   const renderProjectsData = projectsData.map((project) => {
     return (
       <div id="project" className="card flex gap-5 project" key={project.id}>

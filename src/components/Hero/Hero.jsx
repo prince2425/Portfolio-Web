@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HeroImage from "../../assets/image11.png";
 import CV from "../../assets/Resume.pdf";
 import "./Hero.css";
@@ -12,17 +12,26 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import "@fontsource/roboto";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import useScrollLeftAnimation from "../../hooks/useScrollLeftAnimation";
+import useScrollRightAnimation from "../../hooks/useScrollRightAnimation";
 
 const Hero = () => {
+  const { leftRef, showLeft } = useScrollLeftAnimation();
+  const { rightRef, showRight } = useScrollRightAnimation();
+
   return (
     <section id="home">
       <div className="hero-section flex wrapper gap-4  hight">
-        <div className="hero-content">
+        <div
+          ref={leftRef}
+          className={`hero-content ${showLeft ? "left-show" : "left-hidden"}`}
+        >
           <span className="sub-text ">Hi, I'm</span>
 
           <h1>
-            <span className="green-text font-medium playwrite" >Prince Singh</span>
+            <span className="green-text font-medium playwrite">
+              Prince Singh
+            </span>
             <br /> <span className="">Software Developer </span>
           </h1>
 
@@ -77,7 +86,7 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-2 hight">
-            <AnchorLink className="btn"  href="#project">
+            <AnchorLink className="btn" href="#project">
               View My Works
             </AnchorLink>
 
@@ -87,7 +96,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-image imagehover">
+        <div
+          ref={rightRef}
+          className={`hero-image imagehover ${
+            showRight ? "right-show" : "right-hidden"
+          }`}
+        >
           <img src={HeroImage} alt="Hero Image" className=" " />
         </div>
       </div>

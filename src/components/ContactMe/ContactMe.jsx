@@ -11,8 +11,13 @@ import "./ContactMe.css";
 
 import emailjs from "emailjs-com";
 import React, { useState } from "react";
+import useScrollLeftAnimation from "../../hooks/useScrollLeftAnimation";
+import useScrollRightAnimation from "../../hooks/useScrollRightAnimation";
 
 const ContactMe = () => {
+  const { leftRef, showLeft } = useScrollLeftAnimation();
+  const { rightRef, showRight } = useScrollRightAnimation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,19 +36,24 @@ const ContactMe = () => {
     e.preventDefault();
 
     emailjs
-      .send("service_m0ctnbf", "template_q3889jq", formData, "M_hrkxo6cUlSMbflx")
+      .send(
+        "service_m0ctnbf",
+        "template_q3889jq",
+        formData,
+        "M_hrkxo6cUlSMbflx",
+      )
       .then(
         () => {
           alert("✅ Message sent successfully!");
 
-           // ✅ FORM RESET
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          interest: "",
-          message: "",
-        });
+          // ✅ FORM RESET
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            interest: "",
+            message: "",
+          });
         },
         () => {
           alert("❌ Failed to send message");
@@ -67,7 +77,11 @@ const ContactMe = () => {
         </div>
 
         <div className="flex gap-5 mt-8">
-          <form onSubmit={sendData}>
+          <form
+            onSubmit={sendData}
+            ref={leftRef}
+            className={`animate-left ${showLeft ? "left-show" : "left-hidden"}`}
+          >
             <div className="block md:flex gap-2">
               <div className="input-container ">
                 <label htmlFor="">Your Name</label>
@@ -134,7 +148,7 @@ const ContactMe = () => {
               </div>
             </div>
             <div>
-            {/* <div className="block md:flex gap-2 mt-1">
+              {/* <div className="block md:flex gap-2 mt-1">
               <div className="input-container">
                 <label htmlFor="range">Budget Range(USD)*</label>
                 <select
@@ -192,7 +206,12 @@ const ContactMe = () => {
             </div>
           </form>
 
-          <div className=" info cart">
+          <div
+            ref={rightRef}
+            className={`info cart   ${
+              showRight ? "right-show" : "right-hidden"
+            }`}
+          >
             <div className="detail gap-4">
               <div>
                 <h6 className="green-text">Address</h6>
@@ -279,6 +298,3 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
-
-
-
