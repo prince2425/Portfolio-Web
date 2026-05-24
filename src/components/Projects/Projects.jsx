@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Project1 from "../../assets/project1.png";
 import Project2 from "../../assets/project2.png";
 import Project3 from "../../assets/project6.png";
@@ -7,174 +7,155 @@ import Project5 from "../../assets/project5.png";
 import Project6 from "../../assets/project3.jpg";
 
 import "./Projects.css";
-import { FaArrowRight } from "react-icons/fa";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
-
 
 const projectsData = [
   {
     id: 1,
     title: "Smart Grocery App for Seamless Shopping Experience",
     description:
-      "A dynamic grocery platform with product listings, wishlist, cart functionality, and order summary—focused on delivering.",
+      "A dynamic grocery platform with product listings, wishlist, cart functionality, and order summary.",
     image: Project1,
     liveLink: "https://grocery-app-sage-theta.vercel.app/",
-    tech: [
-      { id: 1, list: "React JS" },
-      { id: 2, list: "Tailwind CSS" },
-      // { id: 3, list: "Chart" },
-    ],
+    tech: ["React JS", "Tailwind CSS"],
   },
   {
     id: 2,
     title: "Snake Game with Real-Time Controls and Scoring",
     description:
-      "A fun and interactive game where players control a growing snake, collect food, and avoid collisions while aiming for the highest score.",
+      "A fun and interactive snake game with controls and score tracking.",
     image: Project2,
     liveLink: "https://clever-snake-5e7746.netlify.app/",
-
-    tech: [
-      { id: 1, list: "React JS" },
-      { id: 2, list: "Tailwind CSS" },
-      // { id: 3, list: "Figma" },
-    ],
+    tech: ["React JS", "Tailwind CSS"],
   },
   {
     id: 3,
-     title: "E-commerce Platform MERN",
+    title: "E-commerce Platform MERN",
     description:
-      "A full-stack E-commerce application built using the MERN stack (MongoDB, Express, React, Node.js) featuring user authentication, product browsing, cart management, and secure checkout..",
+      "A full-stack E-commerce application built using MERN stack.",
     image: Project3,
     liveLink: "",
-
-    tech: [
-      { id: 1, list: "React JS" },
-      { id: 2, list: "Node.js " },
-      { id: 3, list: "MongoDb" },
-    ],
-    
+    tech: ["React JS", "Node.js", "MongoDB"],
   },
   {
     id: 4,
     title: "To-Do App for Efficient Task Management",
     description:
-      "An interactive task management application that enables users to create, update, and delete tasks efficiently.",
+      "Task management app to create, update, and delete tasks.",
     image: Project4,
     liveLink: "https://todo-kappa-lime.vercel.app/",
-
-    tech: [
-      { id: 1, list: "React JS" },
-      { id: 2, list: "Tailwind CSS" },
-      // { id: 3, list: "Adobe" },
-    ],
+    tech: ["React JS", "Tailwind CSS"],
   },
   {
     id: 5,
     title: "QR Code Generator for Quick Data Sharing",
     description:
-      "Developed a QR Code Generator application that allows users to convert text, URLs, and other data into scannable QR codes instantly.",
+      "Generate QR codes instantly for text and URLs.",
     image: Project5,
     liveLink: "https://weather-app-lir7.vercel.app/",
-
-    tech: [
-      { id: 1, list: "React JS" },
-      { id: 2, list: "Tailwind CSS" },
-      // { id: 3, list: "Adobe" },
-    ],
+    tech: ["React JS", "Tailwind CSS"],
   },
   {
     id: 6,
     title: "E-Commerce Platform for Modern Online Shopping",
     description:
-      "A dynamic online shopping platform that allows users to explore products, add items to cart or wishlist.",
+      "Modern online shopping experience with cart & wishlist.",
     image: Project6,
     liveLink: "https://e-commerce-qvjh.vercel.app/",
-
-    tech: [
-      { id: 1, list: "React JS" },
-      { id: 2, list: "Tailwind CSS" },
-      // { id: 3, list: "Adobe" },
-    ],
-   
+    tech: ["React JS", "Tailwind CSS"],
   },
 ];
 
-const Projects = () => {
-  const { sectionRef, show } = useScrollAnimation();
+const ProjectCard = ({ project, index }) => {
+  const cardRef = useRef(null);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShow(entry.isIntersecting);
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (e) => {
-  const card = e.currentTarget;
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
 
-  const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
 
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
 
-  const rotateX = ((y - centerY) / centerY) * -12;
-  const rotateY = ((x - centerX) / centerX) * 12;
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.02)
+    `;
+  };
 
-  card.style.transform = `
-    rotateX(${rotateX}deg)
-    rotateY(${rotateY}deg)
-    scale(1.02)
-  `;
-};
-
-const handleMouseLeave = (e) => {
-  e.currentTarget.style.transform =
-    "rotateX(0deg) rotateY(0deg) scale(1)";
-};
-  
-  const renderProjectsData = projectsData.map((project) => {
-    return (
-      <div id="project" className="card flex gap-5 project" key={project.id}>
-        <div className="project-image card3d"
-    onMouseMove={handleMouseMove}
-    onMouseLeave={handleMouseLeave} >
-          <img src={project.image} alt={project.title} />
-        </div>
-
-        <div className="project-content">
-          <ul className="flex gap-1">
-            {project.tech.map((technology) => (
-              <li key={technology.id} className="list">
-                {technology.list}
-              </li>
-            ))}
-          </ul>
-
-          <h3 className="mt-2">{project.title}</h3>
-
-          <p className="para">{project.description}</p>
-
-          {/* <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-container border-inverse rotate"
-          >
-            <FaArrowRight />
-          </a> */}
-
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn mt-2 inline-block"
-          >
-            Live Demo
-          </a>
-        </div>
-      </div>
-    );
-  });
+  const handleMouseLeave = (e) => {
+    e.currentTarget.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+  };
 
   return (
-    <section >
-      <div className="wrapper p-block-9 border-btn ">
+    <div
+      ref={cardRef}
+      className={`card flex gap-5 project 
+      ${show ? "show-card" : "hide-card"} 
+      ${index % 2 === 0 ? "left-card" : "right-card"}`}
+    >
+      <div
+        className="project-image"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        <img src={project.image} alt={project.title} />
+      </div>
+
+      <div className="project-content">
+        <ul className="flex gap-1">
+          {project.tech.map((item, i) => (
+            <li key={i} className="list">
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <h3 className="mt-2">{project.title}</h3>
+        <p className="para">{project.description}</p>
+
+        <a
+          href={project.liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn mt-2 inline-block"
+        >
+          Live Demo
+        </a>
+      </div>
+    </div>
+  );
+};
+
+const Projects = () => {
+  return (
+    <section>
+      <div className="wrapper p-block-9 border-btn">
         <div className="flex between gap-4   flex-col items-center justify-center text-center">
           <div>
             <span
@@ -195,7 +176,15 @@ const handleMouseLeave = (e) => {
           </a> */}
         </div>
 
-        <div className="flex column gap-5 mt-2">{renderProjectsData}</div>
+        <div className="flex column gap-5 mt-2">
+          {projectsData.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -203,129 +192,19 @@ const handleMouseLeave = (e) => {
 
 export default Projects;
 
-// import React from 'react'
-// import Project1 from '../../assets/project1.jpg'
-// import Project2 from '../../assets/project2.jpg'
-// import Project3 from '../../assets/project3.jpg'
-// import './Projects.CSS'
-// import {FaArrowRight} from 'react-icons/fa';
 
-// const Projects = () => {
 
-//     const renderProjectsData = projectsData.map(project => {
-//         return(
-//             <div className="card flex gap-5 project" key={project.Id}>
-//                 <div className="project-image">
-//                     {/* <img src={project-image} alt="" /> */}
-//                 </div>
 
-//                 <div className="project-content">
-//                     <ul className='flex gap-1'>
-//                         {project.tech.map(technology =>{
-//                             return(
-//                                 <li key={technology.id} className='list'>{technology.list}</li>
-//                             )
-//                         })}
-//                     </ul>
-//                     <h3 className='mt-2'>{project.title}</h3>
-//                     <p className='para'>{project.description}</p>
-//                     <a href="#" className='icon-container border-inverse rotate'>
-//                         <FaArrowRight />
-//                     </a>
-//                 </div>
-//             </div>
-//         )
-//     })
 
-//   return (
-//     <section>
-//         <div className="wrapper p-block-9">
-//             <div className="wrapper p-block-9 border-btn">
-//         <div className="flex between gap-4">
-//           <div>
-//             <span className="sub-text overlay-text" datatype="My portfolio">
-//               My Portfolio
-//             </span>
-//             <h2>
-//               Let's Have a look <br /> at<span className="green-text">My Portfolio</span>
-//             </h2>
-//           </div>
 
-//           <a href="#" className="btn self-end">
-//             View All Projects
-//           </a>
-//         </div>
-//         <div className='flex column gap-2 mt-5'>
-//             {renderProjectsData}
-//         </div>
-//         </div>
 
-// </div>
-//     </section>
-//   )
-// }
 
-// export default Projects
 
-// const projectsData = [
-//     {
-//         Id: 1,
-//         title: 'Smart Financial Dashboard for Digital Management',
-//         description:'dmsl;jasgamng, a  fgnddfkg fg g gfjg fgg a fnafnajfja faf as fas fasjd fsaj fals hfah',
-//         image:Project1,
-//         tech:[
-//             {
-//                 id:1,
-//                 list: 'React js'
-//             },
-//             {
-//                 id:2,
-//                 list: 'MUI CSS'
-//             },
-//             {
-//                 id:3,
-//                 list: 'Chart js'
-//             },
-//         ]
-//     },
-//      {
-//         Id: 2,
-//         title: 'Modern VPN App Interface for Secure Connectivity',
-//         description:'dmsl;jasgamng, a  fgnddfkg fg g gfjg fgg a fnafnajfja faf as fas fasjd fsaj fals hfah',
-//         image:Project2,
-//         tech:[
-//             {
-//                 id:1,
-//                 list: 'Flutter'
-//             },
-//             {
-//                 id:2,
-//                 list: 'Dart'
-//             },
-//             {
-//                 id:3,
-//                 list: 'Figma'
-//             },
-//         ]
-//     },
-//      {
-//         Id: 3,
-//         title: 'rf;gkfgga;ldffkd  d fad jfad fa f f f df  fdlk adlk',
-//         description:'dmsl;jasgamng, a  fgnddfkg fg g gfjg fgg a fnafnajfja faf as fas fasjd fsaj fals hfah',
-//         image:Project3,
-//         tech:[
-//             {
-//                 id:1,
-//                 list: 'Flutter'
-//             },
-//             {
-//                 id:2,
-//                 list: 'Dart'
-//             },
-//             {
-//                 id:3,
-//                 list: 'Adobe XD'
-//             },
-//         ]
-//     },
-// ]
+
+
+
+
+
+
+
+

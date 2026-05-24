@@ -1,162 +1,121 @@
-/* h2{
-    font-size: 28rem;
-    line-height: 100%;
-    margin-top: 2.5rem;
-    color: var(--text-primary-clr);
-    text-transform: capitalize;
+
+
+
+/* =========================
+   HEADING STYLES
+========================= */
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 100%;
+  margin-top: 2.5rem;
+  color: var(--text-primary-clr);
+  text-transform: capitalize;
 }
 
-.overlay-text{
-    position: relative;
-}
-
-.overlay-text::before{
-    content: attr(datatype);
-    position: absolute;
-    top: -70%;
-    left: -60%;
-    font-size: 6rem;
-    color: var(--text-primary-clr);
-    font-weight: bold;
-    text-transform: uppercase;
-    z-index: -1;
-    opacity: .08;
-}
-
-.self-end{
-    align-self: flex-end;
-}
-
-.card{
-    padding: 1.5rem;
-    background: var(--surface-clr);
-    border: 0.1rem solid rgba(123,123,123,02);
-    border-radius: 1rem;
-    flex: 1;
-}
-
-.mt-5{
-    margin-top: 5rem;
-}
-
-h4{
-    font-size: 1.7rem;
-    color: var(--text-primary-clr);
-}
-
-.service-icon{
-    width: 4rem;
-    aspect-ratio: 1;
-    font-size: 1.8rem;
-    color: var(--text-primary-clr);
-    background: var(--background-clr);
-    border: .1rem solid rgba(123,123,123,02);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100vw;
+h4 {
+  font-size: 1.7rem;
+  color: var(--text-primary-clr);
 }
 
 
+/* =========================
+   OVERLAY TEXT
+========================= */
 
+.overlay-text {
+  position: relative;
+  font-size: 52px;
+  font-weight: 450;
+}
 
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 790px){
-    .overlay-text::before{
-        font-size: 4rem;
-        top: 30%;
-        left: -30%;
-    }
-
-    h2{
-        font-size: 2.4rem;
-    }
-
-    .p-block-9{
-        padding-block: 5rem;
-    }
+.overlay-text::before {
+  content: attr(datatype);
+  position: absolute;
+  top: -70%;
+  left: -60%;
+  font-size: 6rem;
+  color: var(--text-primary-clr);
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: -1;
+  opacity: 0.08;
 }
 
 
+/* =========================
+   UTILITY CLASSES
+========================= */
 
-
- */
-
-
-
-
-
-
- h2{
-    font-size: 2.8rem;
-    line-height: 100%;
-    margin-top: 2.5rem;
-    color: var(--text-primary-clr);
-    text-transform: capitalize;
+.self-end {
+  align-self: flex-end;
 }
 
-.overlay-text{
-    position: relative;
-    font-size: 52px;
-    font-weight: 450;
+.mt-5 {
+  margin-top: 5rem;
 }
 
-.overlay-text::before{
-    content: attr(datatype);
-    position: absolute;
-    top: -70%;
-    left: -60%;
-    font-size: 6rem;
-    color: var(--text-primary-clr);
-    font-weight: bold;
-    text-transform: uppercase;
-    z-index: -1;
-    opacity: .08;
+
+/* =========================
+   CARD STYLES
+========================= */
+
+.card {
+  flex: 1;
+  padding: 1.5rem;
+  background: var(--surface-clr);
+  border: 1px solid rgba(123, 123, 123, 0.2);
+  border-radius: 1rem;
+  overflow: hidden;
+
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform, opacity;
 }
 
-.self-end{
-    align-self: flex-end;
+.card:hover {
+  transform: translateY(-10px);
 }
 
-.card{
-    padding: 1.5rem;
-    background: var(--surface-clr);
-    border: 0.1rem solid rgba(123,123,123,0.2);
-    border-radius: 1rem;
-    flex: 1;
+.card h4 {
+  margin-top: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary-clr);
 }
 
-.mt-5{
-    margin-top: 5rem;
+.card p {
+  margin-top: 0.8rem;
+  color: var(--text-secondary-clr);
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
-h4{
-    font-size: 1.7rem;
-    color: var(--text-primary-clr);
-}
 
-.service-icon{
-    width: 3rem;
-    aspect-ratio: 1;
-    font-size: 1.8rem;
-    color: var(--text-primary-clr);
-    background: var(--background-clr);
-  border: 1px solid rgba(249,115,22,0.18);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 17px;
-      font-size: 2rem;
-      margin-left: 2px;
-      margin-top: 5px;
+/* =========================
+   SERVICE ICON
+========================= */
+
+.service-icon {
+  width: 3rem;
+  aspect-ratio: 1;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--background-clr);
+  border: 1px solid rgba(249, 115, 22, 0.18);
+  border-radius: 17px;
+
+  color: var(--text-primary-clr);
+  font-size: 2rem;
+
+  margin-left: 2px;
+  margin-top: 5px;
+
   transition:
     transform 0.45s ease,
     background 0.45s ease,
@@ -164,7 +123,7 @@ h4{
 }
 
 .card:hover .service-icon {
-  transform: rotate(8deg) scale(1.10);
+  /* transform: rotate(8deg) scale(1.10); */
 
   background: linear-gradient(
     135deg,
@@ -184,13 +143,14 @@ h4{
   opacity: 0;
   transform: scale(0.85) translateY(40px);
 
-  animation: zoomReveal 0.8s ease forwards;
+  animation: zoomReveal 0.8s ease-in-out forwards;
 
-  /* smooth animation */
+  /* Better performance */
   will-change: transform, opacity;
 }
 
 /* Delay for each card */
+
 .reveal-card:nth-child(1) {
   animation-delay: 0.2s;
 }
@@ -203,7 +163,6 @@ h4{
   animation-delay: 0.6s;
 }
 
-/* Keyframes */
 @keyframes zoomReveal {
   0% {
     opacity: 0;
@@ -217,22 +176,9 @@ h4{
 }
 
 
-
-.card h4 {
-  margin-top: 1.6rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text-primary-clr);
-}
-
-
-.card p {
-  margin-top: 0.8rem;
-  color: var(--text-secondary-clr);
-  line-height: 1.5;
-  font-size: 1rem;
-}
-
+/* =========================
+   LINK STYLES
+========================= */
 
 .link {
   display: inline-flex;
@@ -245,12 +191,11 @@ h4{
   text-decoration: none;
   font-weight: 600;
 
-  transition: all 0.35s ease;
+  transition: all 0.35s ease-in-out;
 }
 
-
 .link svg {
-  transition: transform 0.35s ease;
+  transition: transform 0.35s ease-in-out;
 }
 
 .card:hover .link svg {
@@ -262,22 +207,43 @@ h4{
 }
 
 
-@media screen and (max-width: 790px){
+/* =========================
+   LEFT ANIMATION
+========================= */
 
-    .overlay-text::before{
-        font-size: 4rem;
-        top: 30%;
-        left: -30%;
-    }
+.left-hidden {
+  opacity: 0;
+  transform: translateX(-120px);
+}
 
-    h2{
-        font-size: 2.4rem;
-    }
+.left-show {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-    .p-block-9{
-        padding-block: 5rem;
-    }
+.animate-left {
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
 
-}  
 
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
 
+@media screen and (max-width: 790px) {
+  .overlay-text::before {
+    font-size: 4rem;
+    top: 30%;
+    left: -30%;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  .p-block-9 {
+    padding-block: 5rem;
+  }
+}

@@ -1,152 +1,135 @@
-/* .project-image,
-.project-content{
-    flex: 1;
-    flex-basis: 300px;
+/* =========================
+   Project Layout
+========================= */
+
+.project-image,
+.project-content {
+  flex: 1;
+  min-width: 300px;
 }
 
-.project-image{
-    border-radius: 1rem;
-    overflow: hidden;
+.project {
+  display: flex;
+  align-items: center;
 }
 
-.rotate{
-    transform: rotate(-45deg);
-    transition: .3s ease-in-out;
+/* Alternate layout */
+.project:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
-.card:hover .rotate{
-    transform:rotate(0)
+/* =========================
+   Image Responsive + 3D
+========================= */
 
+.project-image {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.25s ease-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
-h3{
-    font-size: 2rem;
-    color: var(--text-primary-clr);
+.project-image img {
+  width: 100%;
+  height: auto; /* responsive */
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
-.project:nth-child(even){
-    flex-direction: row-reverse;
+/* =========================
+   Typography
+========================= */
+
+h3 {
+  font-size: 2rem;
+  color: var(--text-primary-clr);
 }
 
-.list{
-    padding: .8rem 2rem;
-    background: var(--accent-clr);
-    color: var(--fix-clr);
-    border-radius: 100vw;
+.list {
+  padding: 0.8rem 2rem;
+  background: var(--accent-clr);
+  color: var(--fix-clr);
+  border-radius: 100vw;
 }
 
-.gap-1{
-    gap: 1rem;
+.gap-1 {
+  gap: 1rem;
 }
 
-.mt-2{
-    margin-top: 2rem;
+.mt-2 {
+  margin-top: 2rem;
 }
 
+/* =========================
+   Smooth Scroll Animation
+========================= */
 
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 790px){
-    .list{
-        padding: .8rem 1.5rem;
-    }
-
-    h3{
-        font-size: 1.6rem;
-    }
-
-    .gap-5{
-        gap: 2rem;
-    }
+.project {
+  opacity: 0;
+  /* filter: blur(10px); */
+  transform: translate3d(0, 0, 0) scale(0.95);
+  transition:
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1s ease,
+    filter 1s ease;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- .project-image,
-.project-content{
-    flex: 1;
-    flex-basis: 300px;
+/* Left hidden */
+.left-card.hide-card {
+  transform: translate3d(-180px, 0, 0) scale(0.95);
 }
 
-.project-image{
-    border-radius: 1rem;
-    overflow: hidden;
+/* Right hidden */
+.right-card.hide-card {
+  transform: translate3d(180px, 0, 0) scale(0.95);
 }
 
-.project-image img{
+/* Show animation */
+.show-card {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media screen and (max-width: 790px) {
+  .project {
+    flex-direction: column !important;
+    gap: 2rem;
+  }
+
+  .project-image,
+  .project-content {
     width: 100%;
-    height: 100%;
+    min-width: 100%;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-height: 280px;
     object-fit: cover;
-}
+  }
 
-.rotate{
-    transform: rotate(-45deg);
-    transition: .3s ease-in-out;
-}
+  .list {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
 
-.card:hover .rotate{
-    transform: rotate(0);
-}
+  h3 {
+    font-size: 1.5rem;
+  }
 
-h3{
-    font-size: 2rem;
-    color: var(--text-primary-clr);
-}
-
-.project:nth-child(even){
-    flex-direction: row-reverse;
-}
-
-.list{
-    padding: .8rem 2rem;
-    background: var(--accent-clr);
-    color: var(--fix-clr);
-    border-radius: 100vw;
-}
-
-.gap-1{
-    gap: 1rem;
-}
-
-.mt-2{
-    margin-top: 2rem;
-}
-
-@media screen and (max-width: 790px){
-
-    .list{
-        padding: .8rem 1.5rem;
-    }
-
-    h3{
-        font-size: 1.6rem;
-    }
-
-    .gap-5{
-        gap: 2rem;
-    }
-
+  /* Mobile me bottom se smooth reveal */
+  .left-card.hide-card,
+  .right-card.hide-card {
+    transform: translate3d(0, 80px, 0) scale(0.95);
+  }
 }
