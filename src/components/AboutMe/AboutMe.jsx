@@ -10,39 +10,46 @@ const AboutMe = () => {
   const { rightRef, showRight } = useScrollRightAnimation();
 
   return (
-    <section>
-      <div id="about" className="flex gap-20 wrapper p-block-9 border-btn ">
+    <section id="about" className="about-section">
+      <div className="text-center height mt-20">
+        <span
+          className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text middle"
+          datatype="About Me"
+        >
+          About Me
+        </span>
+      </div>
+
+      <div
+        id="about"
+className="lg:flex md:flex-row gap-8 wrapper p-block-9 border-btn items-center"
+      >
+        {/* Left Image Section */}
         <div
           ref={leftRef}
-          className={`flex-1 basis-75 animate-left ${
+          className={`lg:w-[35%] w-full flex justify-center animate-left ${
             showLeft ? "left-show" : "left-hidden"
           }`}
         >
           <img
             src={AboutImage}
-            alt="Abou"
-            className="imagehover w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover p-1 md:p-9 lg:p-15"
+            alt="About"
+            className="imagehover w-[380px] md:w-[350px] lg:w-[350px] h-auto object-cover mx-auto"
           />
         </div>
 
+        {/* Right Content Section */}
         <div
           ref={rightRef}
-          className={` animate-right ${
+          className={`lg:w-[65%] w-full animate-right ${
             showRight ? "right-show" : "right-hidden"
           }`}
         >
-          <span
-            className=" text-6xl font-medium bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent "
-            datatype="About Me"
-          >
-            About Me
-          </span>
-          {/* sub-text overlay-text */}
-          <h2 className="">
+          <h2>
             Who is <span className="green-text m-5">Prince Singh</span>
           </h2>
 
-          <p className="para text-3xl ">
+          <p className="para w-full max-w-none text-base sm:text-lg md:text-xl leading-relaxed text-justify">
             I’m Prince Singh, a passionate and detail-oriented software and web
             developer with a strong foundation in computer science. I specialize
             in building scalable and efficient web applications using
@@ -80,7 +87,7 @@ const AboutMe = () => {
             </div>
 
             <div className="px-3">
-              <h6 className="text-3xl lg:text-4xl font-medium  text-[var(--accent-clr)] text-center">
+              <h6 className="text-3xl lg:text-4xl font-medium text-[var(--accent-clr)] text-center">
                 0.2+
               </h6>
               <p>
@@ -89,7 +96,7 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <a href={CV} download="MyCV" className="btn mt-2 ">
+          <a href={CV} download="MyCV" className="btn mt-2">
             Download CV
           </a>
         </div>

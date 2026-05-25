@@ -19,6 +19,8 @@ const Hero = () => {
   const { leftRef, showLeft } = useScrollLeftAnimation();
   const { rightRef, showRight } = useScrollRightAnimation();
 
+  
+
   return (
     <section id="home">
       <div className="hero-section flex wrapper gap-4  hight">
