@@ -13,7 +13,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <div className="wrapper">
+      {/* <div className="wrapper">
         <div className="flex between border-btn p-block-2 gap-4">
           <h2>
             Let's <span className="green-text">Connect</span> There
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* <ul className="footer-wrapper text-white">
+          <ul className="footer-wrapper text-white">
             <li>
               <h6 className="green-text">Navigation</h6>
             </li>
@@ -115,7 +115,7 @@ const Footer = () => {
                 Contact Me
               </a>
             </li>
-          </ul> */}
+          </ul>
           <ul className="footer-wrapper text-white ">
             <li className="">
               <h6 className="green-text">Contact</h6>
@@ -125,24 +125,24 @@ const Footer = () => {
                 8303-508-816
               </a>
             </li>
-            {/* <li className="mt-2">
+            <li className="mt-2">
               <a href="#" className="link">
                 www.example.com
               </a>
-            </li> */}
+            </li>
             <li className="mt-2">
               <a href="#" className="link">
                 shiprincesingh@gmail.com
               </a>
             </li>
-            {/* <li className="mt-2">
+            <li className="mt-2">
               <a href="#" className="link">
                 1523 Royal jj mnjjh
               </a>
-            </li> */}
+            </li>
           </ul>
 
-          {/* <div className="footer-wrapper ">
+          <div className="footer-wrapper ">
             <h6 className="green-text">Get the latest Information</h6>
             <div className="footer-input mt-2 flex items-stretch">
               <input
@@ -155,16 +155,16 @@ const Footer = () => {
                 <FaPaperPlane />
               </button>
             </div>
-          </div> */}
+          </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="copyright">
-        <div className="wrapper flex between">
-          <p>Copyright &copy; Singh. All Rights Reserved</p>
-          <p>User Terms & Condition | Privacy Policy</p>
-        </div>
-      </div>
+  <div className="wrapper flex between">
+    <p>© 2026 Prince Singh. Designed & Developed by Prince.</p>
+    <p>Privacy Policy | Terms & Conditions</p>
+  </div>
+</div>
     </footer>
   );
 };
