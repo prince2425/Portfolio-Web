@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import Project1 from "../../assets/project1.png";
-import Project2 from "../../assets/project2.png";
-import Project3 from "../../assets/project6.png";
+import Project2 from "../../assets/project2.jpeg";
+import Project3 from "../../assets/project3.png";
 import Project4 from "../../assets/project4.jpg";
 import Project5 from "../../assets/project5.png";
-import Project6 from "../../assets/project3.jpg";
+import Project6 from "../../assets/project6.jpg";
+import Project7 from "../../assets/project7.png";
 
 import "./Projects.css";
 
@@ -19,14 +20,14 @@ const projectsData = [
     tech: ["React JS", "Tailwind CSS"],
   },
   {
-    id: 2,
-    title: "Snake Game with Real-Time Controls and Scoring",
-    description:
-      "A fun and interactive snake game with controls and score tracking.",
-    image: Project2,
-    liveLink: "https://clever-snake-5e7746.netlify.app/",
-    tech: ["React JS", "Tailwind CSS"],
-  },
+  id: 2,
+  title: "MERN Food Delivery Application",
+  description:
+    "Full-stack food delivery application with user authentication, restaurant browsing, cart, online payments, and order management.",
+  image: Project2,
+  liveLink: "https://your-food-delivery-app.vercel.app/",
+  tech: ["MongoDB", "Express JS", "React JS", "Node JS"],
+},
   {
     id: 3,
     title: "E-commerce Platform MERN",
@@ -61,6 +62,16 @@ const projectsData = [
       "Modern online shopping experience with cart & wishlist.",
     image: Project6,
     liveLink: "https://e-commerce-qvjh.vercel.app/",
+    tech: ["React JS", "Tailwind CSS"],
+  },
+  
+{
+    id: 7,
+    title: "Snake Game with Real-Time Controls and Scoring",
+    description:
+      "A fun and interactive snake game with controls and score tracking.",
+    image: Project7,
+    liveLink: "https://clever-snake-5e7746.netlify.app/",
     tech: ["React JS", "Tailwind CSS"],
   },
 ];
