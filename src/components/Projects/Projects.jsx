@@ -7,6 +7,7 @@ import Project5 from "../../assets/project5.png";
 import Project6 from "../../assets/project6.jpg";
 import Project7 from "../../assets/project7.png";
 import Project8 from "../../assets/project8.jpeg";
+import Project9 from "../../assets/project9.jpeg";
 
 import "./Projects.css";
 
@@ -77,8 +78,17 @@ const projectsData = [
   description:
     "A modern Tic Tac Toe game with turn-based gameplay, winning line animation, responsive UI, and game reset functionality.",
   image: Project8,
-  liveLink: "https://your-tictactoe-link.vercel.app/",
+  liveLink: "https://tic-tac-two-nu.vercel.app/",
   tech: ["React JS", "CSS3"],
+},
+{
+  id: 9,
+  title: "Weather  App with Live API Integration",
+  description:
+    "A responsive weather application that provides real-time temperature, humidity, wind speed, weather conditions, and city-based forecasts using live API data.",
+  image: Project9,
+  liveLink: "https://weather-app-gamma-three-59.vercel.app/",
+  tech: ["React JS", "Tailwind CSS", "Axios", "OpenWeather API"],
 },
 ];
 
