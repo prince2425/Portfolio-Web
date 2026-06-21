@@ -6,6 +6,7 @@ import Project4 from "../../assets/project4.jpg";
 import Project5 from "../../assets/project5.png";
 import Project6 from "../../assets/project6.jpg";
 import Project7 from "../../assets/project7.png";
+import Project8 from "../../assets/project8.jpeg";
 
 import "./Projects.css";
 
@@ -20,19 +21,18 @@ const projectsData = [
     tech: ["React JS", "Tailwind CSS"],
   },
   {
-  id: 2,
-  title: "MERN Food Delivery Application",
-  description:
-    "Full-stack food delivery application with user authentication, restaurant browsing, cart, online payments, and order management.",
-  image: Project2,
-  liveLink: "https://your-food-delivery-app.vercel.app/",
-  tech: ["MongoDB", "Express JS", "React JS", "Node JS"],
-},
+    id: 2,
+    title: "MERN Food Delivery Application",
+    description:
+      "Full-stack food delivery application with user authentication, restaurant browsing, cart, online payments, and order management.",
+    image: Project2,
+    liveLink: "https://your-food-delivery-app.vercel.app/",
+    tech: ["MongoDB", "Express JS", "React JS", "Node JS"],
+  },
   {
     id: 3,
     title: "E-commerce Platform MERN",
-    description:
-      "A full-stack E-commerce application built using MERN stack.",
+    description: "A full-stack E-commerce application built using MERN stack.",
     image: Project3,
     liveLink: "",
     tech: ["React JS", "Node.js", "MongoDB"],
@@ -40,8 +40,7 @@ const projectsData = [
   {
     id: 4,
     title: "To-Do App for Efficient Task Management",
-    description:
-      "Task management app to create, update, and delete tasks.",
+    description: "Task management app to create, update, and delete tasks.",
     image: Project4,
     liveLink: "https://todo-kappa-lime.vercel.app/",
     tech: ["React JS", "Tailwind CSS"],
@@ -49,8 +48,7 @@ const projectsData = [
   {
     id: 5,
     title: "QR Code Generator for Quick Data Sharing",
-    description:
-      "Generate QR codes instantly for text and URLs.",
+    description: "Generate QR codes instantly for text and URLs.",
     image: Project5,
     liveLink: "https://weather-app-lir7.vercel.app/",
     tech: ["React JS", "Tailwind CSS"],
@@ -58,14 +56,13 @@ const projectsData = [
   {
     id: 6,
     title: "E-Commerce Platform for Modern Online Shopping",
-    description:
-      "Modern online shopping experience with cart & wishlist.",
+    description: "Modern online shopping experience with cart & wishlist.",
     image: Project6,
     liveLink: "https://e-commerce-qvjh.vercel.app/",
     tech: ["React JS", "Tailwind CSS"],
   },
-  
-{
+
+  {
     id: 7,
     title: "Snake Game with Real-Time Controls and Scoring",
     description:
@@ -74,6 +71,15 @@ const projectsData = [
     liveLink: "https://clever-snake-5e7746.netlify.app/",
     tech: ["React JS", "Tailwind CSS"],
   },
+  {
+  id: 8,
+  title: "Responsive Tic Tac Toe Game",
+  description:
+    "A modern Tic Tac Toe game with turn-based gameplay, winning line animation, responsive UI, and game reset functionality.",
+  image: Project8,
+  liveLink: "https://your-tictactoe-link.vercel.app/",
+  tech: ["React JS", "CSS3"],
+},
 ];
 
 const ProjectCard = ({ project, index }) => {
@@ -87,7 +93,7 @@ const ProjectCard = ({ project, index }) => {
       },
       {
         threshold: 0.25,
-      }
+      },
     );
 
     if (cardRef.current) {
@@ -189,11 +195,7 @@ const Projects = () => {
 
         <div className="flex column gap-5 mt-2">
           {projectsData.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-            />
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
@@ -202,20 +204,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
