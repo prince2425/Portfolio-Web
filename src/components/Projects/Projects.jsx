@@ -181,7 +181,7 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   return (
-    <section>
+    <section id="project">
       <div className="wrapper p-block-9 border-btn">
         <div className="flex between gap-4   flex-col items-center justify-center text-center">
           <div>
@@ -194,7 +194,7 @@ const Projects = () => {
 
             <h2 className="font-medium leading-tight sm:leading-normal">
               Let's Have a look <br className="sm:hidden" />
-              at <span className="green-text">My Projecs</span>
+              at <span className="green-text">My Projects</span>
             </h2>
           </div>
 
