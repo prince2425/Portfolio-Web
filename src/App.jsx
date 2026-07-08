@@ -11,7 +11,7 @@ import ContactMe from './components/ContactMe/ContactMe'
 import Footer from './components/Footer/Footer'
 import Education from './components/Education/Education'
 import Skills from './components/Skills/Skills'
-// import Plans from './components/Plans/Plans'
+import Plans from './components/Plans/Plans'
 
 const App = () => {
   return (
@@ -27,7 +27,7 @@ const App = () => {
       <Headline />
       <Testimonial />
       <ContactMe />  
-    
+    {/* <Plans /> */}
       <Footer />
     </div>
   )

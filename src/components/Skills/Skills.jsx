@@ -11,6 +11,7 @@ import {
   FaCode,
   FaMicrosoft,
 } from "react-icons/fa";
+import useScrollLeftAnimation from "../../hooks/useScrollLeftAnimation";
 
 import {
   SiJavascript,
@@ -22,8 +23,10 @@ import {
   SiMysql,
 } from "react-icons/si";
 
+import { motion } from "framer-motion";
+
 const skills = [
-  
+
   {
     name: "HTML5",
     icon: <FaHtml5 />,
@@ -153,6 +156,7 @@ const skills = [
 ];
 
 const Skills = () => {
+  const { leftRef, showLeft } = useScrollLeftAnimation();
   return (
     <section
       id="skills"
@@ -162,57 +166,43 @@ const Skills = () => {
         color: "var(--text-primary-clr)",
       }}
     >
-
-
-
-
-
-
-
       <div className="max-w-7xl mx-auto">
-
-        <div className="flex between gap-4 flex-col items-center justify-center text-center">
-          <div className="flex flex-col items-center justify-center text-center">
-            <span
-  className="text-6xl font-medium bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent overlay-text middle"
-              datatype="Education & Work"
-
-            >
-              My Tech Stack
-            </span>
-
-            <h2 className="font-medium">
-              <span className="green-text">
-                Technologies
-              </span>{" "}
-              Master
-            </h2>
-          </div>
-
-          {/* BUTTON */}
-
-          {/*
-          <a href="#" className="btn">
-            View All Services
-          </a>
-          */}
-        </div>
-
-        {/* <p
-          className="text-center text-xs uppercase tracking-[4px] mb-2"
-          style={{ color: "var(--accent-clr)" }}
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center text-center gap-4"
         >
-          My Tech Stack
-        </p>
+          <span
+            className="text-5xl md:text-6xl font-medium bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"
+          >
+            My Tech Stack
+          </span>
 
-        <h2 className="text-center text-3xl md:text-5xl font-bold mb-14">
-          Technologies I Master
-        </h2> */}
+          <h2 className="font-medium text-2xl md:text-4xl">
+            <span className="green-text">Technologies</span> I Master
+          </h2>
+        </motion.div>
 
+        {/* Skills Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-2">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                scale: 1.08,
+                rotate: 2,
+                y: -10,
+              }}
               className="
                 rounded-2xl
                 p-8
@@ -220,46 +210,61 @@ const Skills = () => {
                 flex-col
                 items-center
                 justify-center
-                hover:scale-105
-                transition-all
-                duration-300
                 shadow-lg
+                cursor-pointer
+                backdrop-blur-md
               "
               style={{
                 background: "var(--surface-clr)",
                 border: "1px solid rgba(128,128,128,0.2)",
               }}
             >
-              <div className={`text-5xl mb-5 ${skill.color}`}>
+              {/* Animated Icon */}
+              <motion.div
+                whileHover={{
+                  rotate: 360,
+                  scale: 1.2,
+                }}
+                transition={{ duration: 0.6 }}
+                className={`text-5xl mb-5 ${skill.color}`}
+              >
                 {skill.icon}
-              </div>
+              </motion.div>
 
+              {/* Skill Name */}
               <h3 className="text-lg font-medium mb-6 text-center">
                 {skill.name}
               </h3>
 
+              {/* Progress Bar */}
               <div
-                className="w-full h-[5px] rounded-full overflow-hidden"
+                className="w-full h-[6px] rounded-full overflow-hidden"
                 style={{
                   background: "rgba(128,128,128,0.3)",
                 }}
               >
-                <div
+                <motion.div
                   className={`h-full ${skill.line} rounded-full`}
-                  style={{ width: skill.width }}
-                ></div>
+                  initial={{ width: 0 }}
+                  whileInView={{ width: skill.width }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.1,
+                  }}
+                  viewport={{ once: true }}
+                />
               </div>
 
+              {/* Percentage */}
               {/* <p
-                className="mt-3 text-sm"
+                className="mt-3 text-sm font-medium"
                 style={{ color: "var(--text-secondary-clr)" }}
               >
                 {skill.width}
               </p> */}
-            </div>
+            </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );
