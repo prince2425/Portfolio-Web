@@ -23,27 +23,7 @@ import {
 } from "react-icons/si";
 
 const skills = [
-  {
-    name: "React.js",
-    icon: <FaReact />,
-    color: "text-cyan-400",
-    line: "bg-cyan-400",
-    width: "90%",
-  },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs />,
-    color: "text-black dark:text-white",
-    line: "bg-white",
-    width: "85%",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss />,
-    color: "text-sky-400",
-    line: "bg-sky-400",
-    width: "95%",
-  },
+  
   {
     name: "HTML5",
     icon: <FaHtml5 />,
@@ -64,6 +44,27 @@ const skills = [
     color: "text-yellow-400",
     line: "bg-yellow-400",
     width: "90%",
+  },
+  {
+    name: "React.js",
+    icon: <FaReact />,
+    color: "text-cyan-400",
+    line: "bg-cyan-400",
+    width: "90%",
+  },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs />,
+    color: "text-black dark:text-white",
+    line: "bg-white",
+    width: "85%",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+    color: "text-sky-400",
+    line: "bg-sky-400",
+    width: "95%",
   },
   {
     name: "Node.js",
