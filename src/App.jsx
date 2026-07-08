@@ -10,6 +10,7 @@ import Testimonial from './components/Testimonial/Testimonial'
 import ContactMe from './components/ContactMe/ContactMe'
 import Footer from './components/Footer/Footer'
 import Education from './components/Education/Education'
+import Skills from './components/Skills/Skills'
 // import Plans from './components/Plans/Plans'
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Hero/> 
       <Headline/>
        <AboutMe/>
+       <Skills />
        <Education />
        <Services/>
       <Projects/>
