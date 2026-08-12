@@ -22,7 +22,7 @@ const AboutMe = () => {
 
       <div
         id="about"
-className="lg:flex md:flex-row gap-8 wrapper p-block-9 border-btn items-center"
+        className="lg:flex md:flex-row gap-6 wrapper p-block-9 border-btn items-center"
       >
         {/* Left Image Section */}
         <div

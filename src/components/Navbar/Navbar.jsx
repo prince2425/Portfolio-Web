@@ -43,7 +43,7 @@ useEffect(() => {
 
   return (
     <header className="header">
-      <nav className="flex between navbar    max-w-[1400px] mx-auto px-4 md:px-8  w-full">
+      <nav className="flex between navbar    max-w-[1300px] mx-auto px-4 md:px-6 w-full">
         <a href="#" className="logo p-2 rounded-[30px] text-xl">
           {/* <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"> */}
           <span className="gradient-text font-bold">Prince Singh</span>
@@ -84,6 +84,8 @@ useEffect(() => {
 
 
           {/* <a href="#" className="bg-gradient-to-r from-orange-400 to-orange-600 text-white px-3 py-2 font-bold rounded-full"> */}
+          
+          
          <AnchorLink href="#contactme" className="btn btn2">
            Let's Talk
          </AnchorLink>
